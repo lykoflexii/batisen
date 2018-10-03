@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # GesBtp
 This application was generated using JHipster 4.14.2, you can find documentation and help at [http://www.jhipster.tech/documentation-archive/v4.14.2](http://www.jhipster.tech/documentation-archive/v4.14.2).
 
@@ -172,3 +173,6 @@ To configure CI for your project, run the ci-cd sub-generator (`jhipster ci-cd`)
 [Protractor]: https://angular.github.io/protractor/
 [Leaflet]: http://leafletjs.com/
 [DefinitelyTyped]: http://definitelytyped.org/
+=======
+# batisen
+>>>>>>> b808a6e38bf3d2e980a99e32ee472ed7415525f5
