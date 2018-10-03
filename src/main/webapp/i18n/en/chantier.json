@@ -1,0 +1,36 @@
+
+{
+    "gesBtpApp": {
+        "chantier" : {
+            "home": {
+                "title": "Chantiers",
+                "createLabel": "Create a new Chantier",
+                "createOrEditLabel": "Create or edit a Chantier",
+                "search": "Search for Chantier"
+            },
+            "created": "A new Chantier is created with identifier {{ param }}",
+            "updated": "A Chantier is updated with identifier {{ param }}",
+            "deleted": "A Chantier is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Chantier {{ id }}?"
+            },
+            "detail": {
+                "title": "Chantier"
+            },
+            "nomChantier": "Nom Chantier",
+            "descriptionChantier": "Description Chantier",
+            "ville": "Ville",
+            "adresse": "Adresse",
+            "etatChantier": "Etat Chantier",
+            "dateDebutReelle": "Date Debut Reelle",
+            "dateFinReelle": "Date Fin Reelle",
+            "dateDebutPrevu": "Date Debut Prevu",
+            "dateFinPrevu": "Date Fin Prevu",
+            "client": "Client",
+            "affectation3": "Affectation 3",
+            "chantier": "Chantier",
+            "facture2": "Facture 2",
+            "user": "User"
+        }
+    }
+}

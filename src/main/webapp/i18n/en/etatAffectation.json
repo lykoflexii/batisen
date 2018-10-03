@@ -1,0 +1,10 @@
+{
+    "gesBtpApp": {
+        "EtatAffectation" : {
+            "null": "",
+            "TERMINER": "TERMINER",
+            "EN_COURS": "EN_COURS",
+            "EN_RETARD": "EN_RETARD"
+        }
+    }
+}

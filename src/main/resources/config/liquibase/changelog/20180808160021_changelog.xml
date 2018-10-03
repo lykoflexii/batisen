@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+   <changeSet author="Badjinka (generated)" id="1533744039623-1">
+      <addForeignKeyConstraint baseColumnNames="user_id"
+                               baseTableName="chantier"
+                               constraintName="FKkicy4d6gabsout1b3sqfrmq9r"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="jhi_user"/>
+   </changeSet>
+   <changeSet author="Badjinka (generated)" id="1533744039623-2">
+      <addForeignKeyConstraint baseColumnNames="entreprise_id"
+                               baseTableName="jhi_user"
+                               constraintName="FKlxbvmmjsmccppbq5dl7r2bgls"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="entreprise"/>
+   </changeSet>
+   <changeSet author="Badjinka (generated)" id="1533744039623-3">
+      <dropUniqueConstraint constraintName="jhi_social_user_connection_user_id_provider_id_provider_use_key"
+                            tableName="jhi_social_user_connection"/>
+   </changeSet>
+   <changeSet author="Badjinka (generated)" id="1533744039623-4">
+      <dropUniqueConstraint constraintName="jhi_social_user_connection_user_id_provider_id_rank_key"
+                            tableName="jhi_social_user_connection"/>
+   </changeSet>
+</databaseChangeLog>

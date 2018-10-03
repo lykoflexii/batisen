@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+   <changeSet author="Badjinka (generated)" id="1526779758267-1">
+      <createTable tableName="devis">
+         <column autoIncrement="true" name="id" type="BIGINT">
+            <constraints primaryKey="true" primaryKeyName="devisPK"/>
+         </column>
+         <column name="date_de_creation" type="BYTEA">
+            <constraints nullable="false"/>
+         </column>
+         <column name="chantier_id" type="BIGINT"/>
+         <column name="client_id" type="BIGINT"/>
+      </createTable>
+   </changeSet>
+   <changeSet author="Badjinka (generated)" id="1526779758267-2">
+      <createTable tableName="ligne_devis">
+         <column autoIncrement="true" name="id" type="BIGINT">
+            <constraints primaryKey="true" primaryKeyName="ligne_devisPK"/>
+         </column>
+         <column name="designation" type="VARCHAR(255)">
+            <constraints nullable="false"/>
+         </column>
+         <column name="prix_unitaire" type="FLOAT8">
+            <constraints nullable="false"/>
+         </column>
+         <column name="quantite" type="INT">
+            <constraints nullable="false"/>
+         </column>
+         <column name="devis_id" type="BIGINT"/>
+      </createTable>
+   </changeSet>
+   <changeSet author="Badjinka (generated)" id="1526779758267-3">
+      <addColumn tableName="employe">
+         <column name="date_naissance" type="bytea"/>
+      </addColumn>
+   </changeSet>
+   <changeSet author="Badjinka (generated)" id="1526779758267-4">
+      <addColumn tableName="employe">
+         <column name="salaire" type="float8"/>
+      </addColumn>
+   </changeSet>
+   <changeSet author="Badjinka (generated)" id="1526779758267-5">
+      <addForeignKeyConstraint baseColumnNames="client_id"
+                               baseTableName="devis"
+                               constraintName="FK5e9ri93wudunww5t9eqenq0bp"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="client"/>
+   </changeSet>
+   <changeSet author="Badjinka (generated)" id="1526779758267-6">
+      <addForeignKeyConstraint baseColumnNames="devis_id"
+                               baseTableName="ligne_devis"
+                               constraintName="FK75yqki0f0wc8ynf3bge1ejm5l"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="devis"/>
+   </changeSet>
+   <changeSet author="Badjinka (generated)" id="1526779758267-7">
+      <addForeignKeyConstraint baseColumnNames="chantier_id"
+                               baseTableName="devis"
+                               constraintName="FKkdl03wr531na64su7qq5iqke2"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="chantier"/>
+   </changeSet>
+   <changeSet author="Badjinka (generated)" id="1526779758267-8">
+      <dropUniqueConstraint constraintName="jhi_social_user_connection_user_id_provider_id_provider_use_key"
+                            tableName="jhi_social_user_connection"/>
+   </changeSet>
+   <changeSet author="Badjinka (generated)" id="1526779758267-9">
+      <dropUniqueConstraint constraintName="jhi_social_user_connection_user_id_provider_id_rank_key"
+                            tableName="jhi_social_user_connection"/>
+   </changeSet>
+   <changeSet author="Badjinka (generated)" id="1526779758267-10">
+      <dropColumn columnName="email_employe" tableName="employe"/>
+   </changeSet>
+</databaseChangeLog>

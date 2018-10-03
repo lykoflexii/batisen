@@ -1,0 +1,27 @@
+
+{
+    "gesBtpApp": {
+        "ligneFacture" : {
+            "home": {
+                "title": "Ligne Factures",
+                "createLabel": "Create a new Ligne Facture",
+                "createOrEditLabel": "Create or edit a Ligne Facture",
+                "search": "Search for Ligne Facture"
+            },
+            "created": "A new Ligne Facture is created with identifier {{ param }}",
+            "updated": "A Ligne Facture is updated with identifier {{ param }}",
+            "deleted": "A Ligne Facture is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Ligne Facture {{ id }}?"
+            },
+            "detail": {
+                "title": "Ligne Facture"
+            },
+            "designation": "Designation",
+            "prixUnitaire": "Prix Unitaire",
+            "quantite": "Quantite",
+            "quantiteRetenue": "Quantite Retenue",
+            "facture": "Facture"
+        }
+    }
+}

@@ -1,0 +1,93 @@
+<br/><br/><br/><br/>
+<div class="container">
+<div  id="dev"  *ngIf="facture">
+
+        <table  cellspacing="20">
+            <tr>
+                <td> <h4><strong> N° Facture:</strong>&nbsp; {{facture.id}}</h4></td>
+                <td><h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </h4></td>
+                <td><h4></h4></td>
+                <td> <h4><strong> client: </strong>&nbsp;&nbsp;</h4></td>
+           </tr>
+           <tr>
+               
+            </tr>
+           <tr>
+                <td> <h4> <strong>&nbsp;&nbsp;Date:</strong>&nbsp; </h4></td>
+                <td><h4></h4></td>
+                <td><h4></h4></td>
+                <td> <h4><strong>N° Chantier:</strong>&nbsp;&nbsp;{{facture.chantierId}} </h4></td>
+           </tr>
+           <tr>
+               
+           </tr>
+           <tr>
+                <td> <h4><strong>Validite:&nbsp;</strong> </h4> </td>
+                <td><h4></h4></td>
+                <td><h4></h4></td>
+                <td><h4> <strong>Travau:&nbsp;&nbsp;</strong>{{facture.travauxNomTrav}}</h4> </td>
+           </tr>
+           <tr>
+                <td> <h4></h4> </td>
+                <td><h4><strong>Titre:&nbsp;</strong> </h4></td>
+                <td><h4></h4></td>
+                <td><h4>  </td>
+           </tr>
+        </table>
+        <div>&nbsp;</div>
+        <div class="table-responsive" *ngIf="ligneFacture">
+                <table class="table">
+                    <thead>
+                    <tr>
+                    <th ><span jhiTranslate="gesBtpApp.ligneFacture.designation">Designation</span> </th>
+                    <th ><span jhiTranslate="gesBtpApp.ligneFacture.prixUnitaire">Prix Unitaire</span></th>
+                    <th ><span jhiTranslate="gesBtpApp.ligneFacture.quantite">Quantite</span></span></th>
+                    <th>Total</th>
+                    <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let ligneFacture of ligneFacture ;trackBy: trackId">
+                        <td>{{ligneFacture.designation}}</td>
+                        <td>{{ligneFacture.prixUnitaire}}</td>
+                        <td>{{ligneFacture.quantite}}</td>
+                        <td>
+                            {{ligneFacture.prixUnitaire * ligneFacture.quantite}}
+                        </td>
+                    </tr>
+                    </tbody>
+                    <tfoot>
+                            <tr>
+                              <th></th>
+                              <th></th>
+                              <th style="text-align:right">
+                                    TOTAL  HT: <br/>
+                                    TOTAL TVA <br/>
+                                    TOTAL TTC 
+                              </th>
+                              <th>
+                                    {{total}} <br/>
+                                    <!-- {{totaltva}}<br/>
+                                    {{totalTTC}} -->
+                              </th>
+                              <th></th>
+                            </tr>
+                            
+                         </tfoot>
+                </table>
+            </div>
+</div>
+ <button *ngIf="facture" type="submit"  style="float:right;"
+            (click)="download()"
+            class="btn btn-info">
+        <span class="fa fa-file-pdf-o"></span>&nbsp;<span > Telecharger PDF</span>
+    </button>
+    <!-- <button *ngIf="!facture" type="submit"  style="float:right;"
+            (click)="download()"
+            class="btn btn-info">
+        <span class="fa fa-file-pdf-o"></span>&nbsp;<span > Modifier</span>
+    </button> -->
+</div>

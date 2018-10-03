@@ -1,0 +1,44 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "facture",
+            "otherEntityName": "facture",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "designation",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "prixUnitaire",
+            "fieldType": "Double",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "quantite",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "quantiteRetenue",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20180703095851",
+    "dto": "mapstruct",
+    "service": "serviceClass",
+    "entityTableName": "ligne_facture",
+    "jpaMetamodelFiltering": false,
+    "pagination": "pagination"
+}

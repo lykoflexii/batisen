@@ -1,0 +1,188 @@
+<!-- <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myFactureLabel" jhiTranslate="gesBtpApp.facture.home.createOrEditLabel">Create or edit a Facture</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!facture.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="facture.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="gesBtpApp.facture.dateCreation" for="field_dateCreation">Date Creation</label>
+            <div class="input-group">
+                <input id="field_dateCreation" type="text" class="form-control" name="dateCreation" ngbDatepicker  #dateCreationDp="ngbDatepicker" [(ngModel)]="facture.dateCreation"
+                required/>
+                <span class="input-group-append">
+                    <button type="button" class="btn btn-secondary" (click)="dateCreationDp.toggle()"><i class="fa fa-calendar"></i></button>
+                </span>
+            </div>
+            <div [hidden]="!(editForm.controls.dateCreation?.dirty && editForm.controls.dateCreation?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.dateCreation?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="gesBtpApp.facture.remise" for="field_remise">Remise</label>
+            <input type="number" class="form-control" name="remise" id="field_remise"
+                [(ngModel)]="facture.remise" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="gesBtpApp.facture.valider" for="field_valider">Valider</label>
+            <input type="checkbox" class="form-control" name="valider" id="field_valider"
+                [(ngModel)]="facture.valider" />
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="gesBtpApp.facture.chantier" for="field_chantier">Chantier</label>
+            <select class="form-control" id="field_chantier" name="chantier" [(ngModel)]="facture.chantierId" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="chantierOption.id" *ngFor="let chantierOption of chantiers; trackBy: trackChantierById">{{chantierOption.nomChantier}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="gesBtpApp.facture.travaux" for="field_travaux">Travaux</label>
+            <select class="form-control" id="field_travaux" name="travaux" [(ngModel)]="facture.travauxId" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="travauxOption.id" *ngFor="let travauxOption of travauxes; trackBy: trackTravauxById">{{travauxOption.nomTrav}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="gesBtpApp.facture.entreprise" for="field_entreprise">Entreprise</label>
+            <select class="form-control" id="field_entreprise" name="entreprise" [(ngModel)]="facture.entrepriseId" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="entrepriseOption.id" *ngFor="let entrepriseOption of entreprises; trackBy: trackEntrepriseById">{{entrepriseOption.name}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form> -->
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myFactureLabel" jhiTranslate="gesBtpApp.facture.home.createOrEditLabel">Create or edit a Facture</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!facture.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="facture.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="gesBtpApp.facture.dateCreation" for="field_dateCreation">Date Creation</label>
+            <div class="input-group">
+                <input id="field_dateCreation" type="text" class="form-control" name="dateCreation" ngbDatepicker  #dateCreationDp="ngbDatepicker" [(ngModel)]="facture.dateCreation"
+                required/>
+                <span class="input-group-append">
+                    <button type="button" class="btn btn-secondary" (click)="dateCreationDp.toggle()"><i class="fa fa-calendar"></i></button>
+                </span>
+            </div>
+            <div [hidden]="!(editForm.controls.dateCreation?.dirty && editForm.controls.dateCreation?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.dateCreation?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="gesBtpApp.facture.valider" for="field_valider">Valider</label>
+            <input type="checkbox" class="form-control" name="valider" id="field_valider"
+                [(ngModel)]="facture.valider" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="gesBtpApp.facture.remise" for="field_remise">Remise</label>
+            <input type="number" class="form-control" name="remise" id="field_remise"
+                [(ngModel)]="facture.remise" />
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="gesBtpApp.facture.chantier" for="field_chantier">Chantier</label>
+            <select class="form-control" id="field_chantier" name="chantier" [(ngModel)]="facture.chantierId" (change)="chargerTravaux()">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="chantierOption.id" *ngFor="let chantierOption of chantiers; trackBy: trackChantierById">{{chantierOption.nomChantier}}</option>
+            </select>
+        </div>
+        <div class="form-group" *ngIf="facture.chantierId" >
+            <label class="form-control-label" jhiTranslate="gesBtpApp.facture.travaux" for="field_travaux">Travaux</label>
+            <select class="form-control" id="field_travaux" name="travaux" [(ngModel)]="facture.travauxId" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="travauxOption.id" *ngFor="let travauxOption of travauxes; trackBy: trackTravauxById">{{travauxOption.nomTrav}}</option>
+            </select>
+        </div>
+        <!-- <div class="form-group">
+            <label class="form-control-label" jhiTranslate="gesBtpApp.facture.entreprise" for="field_entreprise">Entreprise</label>
+            <select class="form-control" id="field_entreprise" name="entreprise" [(ngModel)]="facture.entrepriseId" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="entrepriseOption.id" *ngFor="let entrepriseOption of entreprises; trackBy: trackEntrepriseById">{{entrepriseOption.name}}</option>
+            </select>
+        </div> -->
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>
+<br/>
+<div class="table-responsive" >
+        <table class="table table-striped">
+            <thead>
+            
+            <!-- <th ><span >ID</span> <span class="fa fa-sort"></span></th> -->
+            <th ><span >Designation</span> </span></th>
+            <th ><span >Prix Unitaire</span> </span></th>
+            <th ><span >Quantite</span> </span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+                    <tr *ngFor="let item of listComponentFacture">
+                        <td> <input type="text" [(ngModel)]="item.value.designation" class="form-control" name="designation" id="field_designation"
+                         required/>
+                        </td>
+                        <td>
+                                <input type="number" [(ngModel)]="item.value.prixUnitaire" class="form-control" name="quantite" id="field_quantite"
+                                 required/>
+                        </td>
+                        <td>
+                                <input type="number" [(ngModel)]="item.value.quantite" class="form-control" name="prixUnitaire" id="field_prixUnitaire"
+                                 required/>
+                        </td>
+                        <td><button type="submit"
+                            class="btn btn-danger btn-sm">
+                        <span class="fa fa-remove"></span>
+                        <span class="d-none d-md-inline" jhiTranslate="entity.action.delete"
+                        (click)="removeComponent(item.id)" >Delete</span>
+                    </td>
+                       
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+           <br/>
+           <div class="center">
+            <button [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary"
+                (click)="ajoutComposant()">
+                <span class="fa fa-plus-square"> Ajouter Ligne</span>
+            </button>
+        </div>
+        <br/>

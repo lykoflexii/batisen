@@ -1,0 +1,26 @@
+.example-card {
+  max-width: 400px;
+}
+
+.card-header {
+  background-color: #041470;
+}
+.example-header-image {
+  background-size: cover;
+}
+table {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+td, th {
+  width: 25%;
+}
+  /* .material-icons.orange600 { color: #041470; }
+  .center {
+    text-align: center;
+  } */

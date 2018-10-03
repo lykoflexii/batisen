@@ -1,0 +1,60 @@
+
+<div *ngIf="employe">
+    <h2><span jhiTranslate="gesBtpApp.employe.detail.title">Employe</span> {{employe.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="gesBtpApp.employe.nomEmploye">Nom Employe</span></dt>
+        <dd>
+            <span>{{employe.nomEmploye}}</span>
+        </dd>
+        <dt><span jhiTranslate="gesBtpApp.employe.prenomEmploye">Prenom Employe</span></dt>
+        <dd>
+            <span>{{employe.prenomEmploye}}</span>
+        </dd>
+        <dt><span jhiTranslate="gesBtpApp.employe.matricule">Matricule</span></dt>
+        <dd>
+            <span>{{employe.matricule}}</span>
+        </dd>
+        <dt><span jhiTranslate="gesBtpApp.employe.fonction">Fonction</span></dt>
+        <dd>
+            <span>{{employe.fonction}}</span>
+        </dd>
+        <dt><span jhiTranslate="gesBtpApp.employe.dateNaissance">Date Naissance</span></dt>
+        <dd>
+            <span>{{employe.dateNaissance | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span jhiTranslate="gesBtpApp.employe.telephoneEmploye">Telephone Employe</span></dt>
+        <dd>
+            <span>{{employe.telephoneEmploye}}</span>
+        </dd>
+        <dt><span jhiTranslate="gesBtpApp.employe.salaire">Salaire</span></dt>
+        <dd>
+            <span>{{employe.salaire}}</span>
+        </dd>
+        <dt><span jhiTranslate="gesBtpApp.employe.sexe">Sexe</span></dt>
+        <dd>
+            <span jhiTranslate="{{'gesBtpApp.Sexe.' + employe.sexe}}">{{employe.sexe}}</span>
+        </dd>
+        <dt><span jhiTranslate="gesBtpApp.employe.entreprise">Entreprise</span></dt>
+        <dd>
+            <div *ngIf="employe.entrepriseId">
+                <a [routerLink]="['/entreprise', employe.entrepriseId]">{{employe.entrepriseName}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'employe/'+ employe.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

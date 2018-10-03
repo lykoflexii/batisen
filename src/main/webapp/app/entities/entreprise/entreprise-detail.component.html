@@ -1,0 +1,46 @@
+
+<div *ngIf="entreprise">
+    <h2><span jhiTranslate="gesBtpApp.entreprise.detail.title">Entreprise</span> {{entreprise.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="gesBtpApp.entreprise.name">Name</span></dt>
+        <dd>
+            <span>{{entreprise.name}}</span>
+        </dd>
+        <dt><span jhiTranslate="gesBtpApp.entreprise.commercialName">Commercial Name</span></dt>
+        <dd>
+            <span>{{entreprise.commercialName}}</span>
+        </dd>
+        <dt><span jhiTranslate="gesBtpApp.entreprise.sirenNumber">Siren Number</span></dt>
+        <dd>
+            <span>{{entreprise.sirenNumber}}</span>
+        </dd>
+        <dt><span jhiTranslate="gesBtpApp.entreprise.entrepriseAdminEmail">Entreprise Admin Email</span></dt>
+        <dd>
+            <span>{{entreprise.entrepriseAdminEmail}}</span>
+        </dd>
+        <dt><span jhiTranslate="gesBtpApp.entreprise.telephone">Telephone</span></dt>
+        <dd>
+            <span>{{entreprise.telephone}}</span>
+        </dd>
+        <dt><span jhiTranslate="gesBtpApp.entreprise.pack">Pack</span></dt>
+        <dd>
+            <span>{{entreprise.pack}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'entreprise/'+ entreprise.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

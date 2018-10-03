@@ -1,0 +1,52 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "travaux",
+            "otherEntityName": "travaux",
+            "otherEntityField": "nomTrav"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "chantier",
+            "otherEntityName": "chantier",
+            "otherEntityField": "nomChantier"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "affectation1",
+            "relationshipName": "employe",
+            "otherEntityName": "employe",
+            "otherEntityField": "nomEmploye",
+            "ownerSide": true
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "dateDebut",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "dateFin",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "etat",
+            "fieldType": "EtatAffectation",
+            "fieldValues": "TERMINER,EN_COURS,EN_RETARD"
+        }
+    ],
+    "changelogDate": "20180509145534",
+    "entityTableName": "affectation",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false
+}

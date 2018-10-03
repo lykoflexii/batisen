@@ -1,0 +1,127 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myDevisLabel" jhiTranslate="gesBtpApp.devis.home.createOrEditLabel">Create or edit a Devis</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!devis.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="devis.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="gesBtpApp.devis.titre" for="field_titre">Titre</label>
+            <input type="text" class="form-control" name="titre" id="field_titre"
+                [(ngModel)]="devis.titre" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="gesBtpApp.devis.dateDeCreation" for="field_dateDeCreation">Date De Creation</label>
+            <div class="input-group">
+                <input id="field_dateDeCreation" type="text" class="form-control" name="dateDeCreation" ngbDatepicker  #dateDeCreationDp="ngbDatepicker" [(ngModel)]="devis.dateDeCreation"
+                required/>
+                <span class="input-group-append">
+                    <button type="button" class="btn btn-secondary" (click)="dateDeCreationDp.toggle()"><i class="fa fa-calendar"></i></button>
+                </span>
+            </div>
+            <div [hidden]="!(editForm.controls.dateDeCreation?.dirty && editForm.controls.dateDeCreation?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.dateDeCreation?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="gesBtpApp.devis.validite" for="field_validite">Validite</label>
+            <div class="input-group">
+                <input id="field_validite" type="text" class="form-control" name="validite" ngbDatepicker  #validiteDp="ngbDatepicker" [(ngModel)]="devis.validite"
+                required/>
+                <span class="input-group-append">
+                    <button type="button" class="btn btn-secondary" (click)="validiteDp.toggle()"><i class="fa fa-calendar"></i></button>
+                </span>
+            </div>
+            <div [hidden]="!(editForm.controls.validite?.dirty && editForm.controls.validite?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.validite?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="gesBtpApp.devis.tva" for="field_tva">Tva</label>
+            <input type="number" class="form-control" name="tva" id="field_tva"
+                [(ngModel)]="devis.tva" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="gesBtpApp.devis.coutMainDoeuvre" for="field_coutMainDoeuvre">Cout Main Doeuvre</label>
+            <input type="number" class="form-control" name="coutMainDoeuvre" id="field_coutMainDoeuvre"
+                [(ngModel)]="devis.coutMainDoeuvre" />
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="gesBtpApp.devis.client" for="field_client">Client</label>
+            <select class="form-control" id="field_client" name="client" [(ngModel)]="devis.clientId" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="clientOption.id" *ngFor="let clientOption of clients; trackBy: trackClientById">{{clientOption.nomClient}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="gesBtpApp.devis.chantier" for="field_chantier">Chantier</label>
+            <select class="form-control" id="field_chantier" name="chantier" [(ngModel)]="devis.chantierId" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="chantierOption.id" *ngFor="let chantierOption of chantiers; trackBy: trackChantierById">{{chantierOption.nomChantier}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>
+<div class="center">
+    <button [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary"
+        (click)="ajoutComposant()">
+        <span class="fa fa-plus-square"></span>
+    </button>
+</div>
+<div class="table-responsive" >
+        <table class="table table-striped">
+            <thead>
+            
+            <!-- <th ><span >ID</span> <span class="fa fa-sort"></span></th> -->
+            <th ><span >Designation</span> </span></th>
+            <th ><span >Prix Unitaire</span> </span></th>
+            <th ><span >Quantite</span> </span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+                    <tr *ngFor="let item of listComponentDevis">
+                        <td> <input type="text" [(ngModel)]="item.value.designation" class="form-control" name="designation" id="field_designation"
+                         required/>
+                        </td>
+                        <td>
+                                <input type="number" [(ngModel)]="item.value.prixUnitaire" class="form-control" name="quantite" id="field_quantite"
+                                 required/>
+                        </td>
+                        <td>
+                                <input type="number" [(ngModel)]="item.value.quantite" class="form-control" name="prixUnitaire" id="field_prixUnitaire"
+                                 required/>
+                        </td>
+                        <td><button type="submit"
+                            class="btn btn-danger btn-sm">
+                        <span class="fa fa-remove"></span>
+                        <span class="d-none d-md-inline" jhiTranslate="entity.action.delete"
+                        (click)="removeComponent(item.id)" >Delete</span>
+                    </td>
+                       
+                    </tr>
+                    </tbody>
+                </table>
+            </div>

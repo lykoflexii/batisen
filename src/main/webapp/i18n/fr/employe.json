@@ -1,0 +1,32 @@
+
+{
+    "gesBtpApp": {
+        "employe" : {
+            "home": {
+                "title": "Employes",
+                "createLabel": "Créer un nouveau Employe",
+                "createOrEditLabel": "Créer ou éditer un Employe",
+                "search": "Recherche pour Employe"
+            },
+            "created": "Un nouveau Employe a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Employe avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Employe avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Employe {{ id }} ?"
+            },
+            "detail": {
+                "title": "Employe"
+            },
+            "nomEmploye": "Nom Employe",
+            "prenomEmploye": "Prenom Employe",
+            "matricule": "Matricule",
+            "fonction": "Fonction",
+            "dateNaissance": "Date Naissance",
+            "telephoneEmploye": "Telephone Employe",
+            "salaire": "Salaire",
+            "sexe": "Sexe",
+            "entreprise": "Entreprise",
+            "affectation1": "Affectation 1"
+        }
+    }
+}

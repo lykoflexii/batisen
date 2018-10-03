@@ -1,0 +1,68 @@
+
+<div *ngIf="chantier">
+    <h2><span jhiTranslate="gesBtpApp.chantier.detail.title">Chantier</span> {{chantier.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="gesBtpApp.chantier.nomChantier">Nom Chantier</span></dt>
+        <dd>
+            <span>{{chantier.nomChantier}}</span>
+        </dd>
+        <dt><span jhiTranslate="gesBtpApp.chantier.descriptionChantier">Description Chantier</span></dt>
+        <dd>
+            <span>{{chantier.descriptionChantier}}</span>
+        </dd>
+        <dt><span jhiTranslate="gesBtpApp.chantier.ville">Ville</span></dt>
+        <dd>
+            <span>{{chantier.ville}}</span>
+        </dd>
+        <dt><span jhiTranslate="gesBtpApp.chantier.adresse">Adresse</span></dt>
+        <dd>
+            <span>{{chantier.adresse}}</span>
+        </dd>
+        <dt><span jhiTranslate="gesBtpApp.chantier.etatChantier">Etat Chantier</span></dt>
+        <dd>
+            <span jhiTranslate="{{'gesBtpApp.EtatChantier.' + chantier.etatChantier}}">{{chantier.etatChantier}}</span>
+        </dd>
+        <dt><span jhiTranslate="gesBtpApp.chantier.dateDebutReelle">Date Debut Reelle</span></dt>
+        <dd>
+            <span>{{chantier.dateDebutReelle | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span jhiTranslate="gesBtpApp.chantier.dateFinReelle">Date Fin Reelle</span></dt>
+        <dd>
+            <span>{{chantier.dateFinReelle | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span jhiTranslate="gesBtpApp.chantier.dateDebutPrevu">Date Debut Prevu</span></dt>
+        <dd>
+            <span>{{chantier.dateDebutPrevu | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span jhiTranslate="gesBtpApp.chantier.dateFinPrevu">Date Fin Prevu</span></dt>
+        <dd>
+            <span>{{chantier.dateFinPrevu | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span jhiTranslate="gesBtpApp.chantier.client">Client</span></dt>
+        <dd>
+            <div *ngIf="chantier.clientId">
+                <a [routerLink]="['/client', chantier.clientId]">{{chantier.clientNomClient}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="gesBtpApp.chantier.user">User</span></dt>
+        <dd>
+            {{chantier.userLogin}}
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'chantier/'+ chantier.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

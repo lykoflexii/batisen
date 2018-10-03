@@ -1,0 +1,40 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "affectation2",
+            "otherEntityName": "affectation",
+            "otherEntityRelationshipName": "travaux"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "facture3",
+            "otherEntityName": "facture",
+            "otherEntityRelationshipName": "travaux"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "nomTrav",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "descriptionTrav",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 200
+        }
+    ],
+    "changelogDate": "20180509145532",
+    "entityTableName": "travaux",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false
+}

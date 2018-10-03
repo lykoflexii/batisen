@@ -1,0 +1,168 @@
+entity Travaux{
+    nomTrav String required,
+    descriptionTrav String maxlength(200)
+}
+
+entity Employe {
+    nomEmploye String required maxlength(50),
+    prenomEmploye String required maxlength(50),
+    matricule String required,
+    fonction String required,
+    dateNaissance LocalDate,
+    telephoneEmploye String,
+    salaire Double,
+    sexe Sexe
+
+
+}
+entity Affectation {
+    dateDebut LocalDate required,
+    dateFin LocalDate required,
+    etat EtatAffectation
+
+}
+entity Chantier {
+    nomChantier String required maxlength(50),
+    descriptionChantier String maxlength(200),
+    ville String required,
+    adresse String required maxlength(100),
+    etatChantier EtatChantier,
+    dateDebutReelle LocalDate,
+    dateFinReelle LocalDate,
+    dateDebutPrevu LocalDate required,
+    dateFinPrevu LocalDate required
+
+}
+entity Client {
+    nomClient String required maxlength(50),
+    villeClient String required maxlength(50),
+    adresseClient String required maxlength(100),
+    telephoneClient String,
+    fax String,
+    emailClient String required,
+    typeClient Type required
+    prenomClient  String,
+    nomCommercial String
+
+}
+
+
+entity Devis {
+    titre String,
+    dateDeCreation LocalDate required,
+    validite LocalDate required,
+    tva Float,
+    coutMainDoeuvre Double
+}
+
+entity LigneDevis {
+    designation String required,
+    prixUnitaire Double required,
+    quantite Integer required
+}
+
+entity Entreprise {
+	name String required,
+	commercialName String required,
+    sirenNumber String required,
+    entrepriseAdminEmail String required,
+    telephone Integer,
+    pack Integer
+}
+entity Facture {
+dateCreation LocalDate required,
+validite LocalDate required,
+remise Double
+// valider Boolean
+}
+entity LigneFacture {
+    designation String required,
+    prixUnitaire Double required,
+    quantite Integer required,
+    quantiteRetenue Integer
+}
+
+enum Sexe {
+    MASCULIN, FEMININ
+  }
+
+ enum Type {
+    PARTICULIER, PROFESSIONNEL
+  }
+
+  enum EtatAffectation {
+    TERMINER,
+    EN_COURS,
+    EN_RETARD
+  }
+
+  enum EtatChantier {
+    A_L_ETUDE,
+    EN_COURS,
+    EN_RETARD,
+    PERDU
+  }
+
+
+relationship ManyToMany {
+    Affectation{Employe(nomEmploye)} to Employe{affectation1}
+}
+relationship ManyToOne {
+  Affectation{Travaux(nomTrav)} to Travaux{affectation2}
+}
+relationship ManyToOne {
+  Affectation{Chantier(nomChantier)} to Chantier{affectation3}
+}
+
+relationship ManyToOne {
+  Chantier{Client(nomClient)} to Client{client}
+}
+
+relationship ManyToOne {
+  Devis{Client(nomClient)} to Client{client1}
+}
+relationship ManyToOne {
+  Devis{Chantier(nomChantier)} to Chantier{chantier}
+}
+
+relationship ManyToOne {
+  LigneDevis{Devis(id)} to Devis{devis}
+}
+relationship ManyToOne {
+  Client{Entreprise(name)} to Entreprise{client}
+}
+relationship ManyToOne {
+  Employe{Entreprise(name)} to Entreprise{employe}
+}
+relationship ManyToOne {
+  LigneFacture{Facture(id)} to Facture{facture}
+}
+
+relationship ManyToOne {
+  Facture{Chantier(nomChantier)} to Chantier{facture2}
+}
+relationship ManyToOne {
+  Facture{Travaux(nomTrav)} to Travaux{facture3}
+}
+
+relationship ManyToOne {
+  Facture{Entreprise(name)} to Entreprise{facture4}
+}
+//
+// Set pagination options
+paginate Travaux with pagination
+paginate Employe with pagination
+paginate Affectation with pagination
+paginate Client with pagination
+paginate Chantier with pagination
+paginate Devis with pagination
+paginate LigneDevis with pagination
+paginate Facture with pagination
+paginate LigneFacture with pagination
+
+dto * with mapstruct
+
+service all with serviceClass
+
+
+// Set an angular suffix

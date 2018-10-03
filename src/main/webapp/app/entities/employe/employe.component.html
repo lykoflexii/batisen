@@ -1,0 +1,188 @@
+
+<br/><br/><br/><br/>
+<div class="row content">
+    <br/>
+    <br/>
+    <br/>
+      <div class="col-sm-3 sidenav">
+            <div class="card">
+                    <div class="card-header"  style="background-color:#041470; color:hsl(231, 64%, 98%);text-align: center" >
+                            <h1> Palette </h1>
+                            </div>
+                    <div class="card-body">
+                        <mat-grid-list cols="2" rowHeight="3:2">
+                            <mat-grid-tile>
+                              <a  data-toggle="tooltip" routerLink="../client" data-placement="bottom" title="Inscription!">
+                                    <span>
+                                      Clients
+                                      <br/>
+                                        <i class="fa fa-fw fa-user fa-4x " aria-hidden="true"  style="color:#041470;"></i>
+                                    </span>
+                                </a>
+                            </mat-grid-tile>
+                            <mat-grid-tile>
+                                <a *jhiHasAnyAuthority="'ROLE_MANAGER'" data-toggle="tooltip" routerLink="../chantier" 
+                                data-placement="bottom" title="Inscription!">
+                                    <span>
+                                        <span >
+                                          Chantiers
+                                          <br/>
+                                            <i class="fa fa-building fa-4x icons" aria-hidden="true"  style="color:#041470;"></i>	
+                                        </span>
+                                        <!-- inscription -->
+                                    </span>
+                                </a>
+                                <a *jhiHasAnyAuthority="'ROLE_CHEF_CHANTIER'" data-toggle="tooltip" routerLink="../chantiers" 
+                                data-placement="bottom" title="Inscription!">
+                                    <span>
+                                        <span >
+                                          Chantiers
+                                          <br/>
+                                            <i class="fa fa-building fa-4x icons" aria-hidden="true"  style="color:#041470;"></i>	
+                                        </span>
+                                        <!-- inscription -->
+                                    </span>
+                                </a>
+                            </mat-grid-tile>
+                            <mat-grid-tile>
+                                <a  data-toggle="tooltip" routerLink="../devis" data-placement="bottom" title="Inscription!">
+                                    <span >
+                                      Devis
+                                      <br/>
+                                        <i class="fa fa-file-text fa-4x icons" aria-hidden="true"  style="color:#041470;"></i>	
+                                    </span>
+                                </a>
+                            </mat-grid-tile>
+                            <mat-grid-tile>
+                                <a  data-toggle="tooltip"  routerLink="../employe" data-placement="bottom" title="Inscription!" style="color:#155d74;">
+                                    <span >
+                                     Ressources
+                                      <br/>
+                                      <i class="fa fa-group fa-4x icons" aria-hidden="true"  style="color:#155d74;"></i>	
+                                    </span>
+                                </a>
+                            </mat-grid-tile>
+                            <mat-grid-tile>
+                              <a data-toggle="tooltip" routerLink="../facture" data-placement="bottom" title="Inscription!">
+                                  <span >
+                                    Factures
+                                    <br/>
+                                      <i class="fa fa-money fa-4x icons" aria-hidden="true"  style="color:#041470;"></i>	
+                                  </span>
+                              </a>
+                            </mat-grid-tile>
+                            <mat-grid-tile>
+                                <a  data-toggle="tooltip" routerLink="../dashboard" data-placement="bottom" title="Inscription!">
+                                    <span >
+                                      Dashboard
+                                      <br/>
+                                        <i class="fa fa-bar-chart fa-4x icons" aria-hidden="true"  style="color:#041470;"></i>	
+                                    </span>
+                                </a>
+                            </mat-grid-tile>
+                          </mat-grid-list>
+                    </div> 
+                   
+                  </div>
+        
+        <br/><br/><br/><br/><br/>
+        <br/><br/><br/><br/><br/>
+        
+      </div>
+  
+      <div class="col-sm-9">
+        
+        <h2 >LISTES DES EMPLOYES </h4>
+        <hr>
+        <div class="container">
+            <mat-form-field>
+                <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Recherche">
+              </mat-form-field>
+              <button mat-fab style="float:right;"  color="primary"
+              matTooltip="Ajouter chantier"
+              [routerLink]="['/', { outlets: { popup: ['employe-new'] } }]">
+                 <mat-icon >add</mat-icon></button>
+                 <div class="mat-elevation-z8">
+                    <mat-table #table [dataSource]="dataSource" matSort>
+                  
+                      <!-- ID Column -->
+                      <ng-container matColumnDef="matricule">
+                        <mat-header-cell *matHeaderCellDef mat-sort-header> Matricule </mat-header-cell>
+                        <mat-cell *matCellDef="let row"> {{row.matricule}} </mat-cell>
+                      </ng-container> 
+                  
+                      <!-- nomTrav Column -->
+                      <ng-container matColumnDef="nomEmploye">
+                        <mat-header-cell *matHeaderCellDef mat-sort-header> Nom </mat-header-cell>
+                        <mat-cell *matCellDef="let row"> {{row.nomEmploye }} </mat-cell>
+                      </ng-container>
+                
+                       <!-- nomTrav Column -->
+                       <ng-container matColumnDef="prenomEmploye">
+                         <mat-header-cell *matHeaderCellDef mat-sort-header> Prenom</mat-header-cell>
+                         <mat-cell *matCellDef="let row"> {{row.prenomEmploye}} </mat-cell>
+                       </ng-container>
+                
+                        <!-- nomTrav Column -->
+                        <ng-container matColumnDef="fonction">
+                         <mat-header-cell *matHeaderCellDef mat-sort-header> Fonction </mat-header-cell>
+                         <mat-cell *matCellDef="let row"> {{row.fonction}} </mat-cell>
+                       </ng-container>
+                
+                       <!-- modifier Column -->
+                       <ng-container matColumnDef="det">
+                            <mat-header-cell *matHeaderCellDef mat-sort-header>  </mat-header-cell>
+                            <mat-cell *matCellDef="let row">
+                                    <!-- <a mat-mini-fab style="margin:1%" routerLink="../client/{{row.id}}"color="primary"><mat-icon>visibility</mat-icon></a>     
+                                 -->
+                                 <button mat-mini-fab style="margin:1%"
+                                 [routerLink]="['/employe/', row.id ]"
+                                  color="primary" matTooltip="Details"><mat-icon>visibility</mat-icon></button> 
+                
+                                     <button mat-mini-fab style="margin:1%"
+                                     [routerLink]="['/', { outlets: { popup: 'employe/'+ row.id + '/edit'} }]"
+                                      color="green" matTooltip="Modifier"><mat-icon>create</mat-icon></button> 
+                
+                                      <button mat-mini-fab style="margin:1%"
+                                                 [routerLink]="['/', { outlets: { popup: 'employe/'+ row.id + '/delete'} }]"
+                                                  color="warn" matTooltip="Supprimer"> 
+                                                   <mat-icon >delete</mat-icon>
+                                              </button>
+                                         </mat-cell>
+                          </ng-container>
+                  
+                      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                      <mat-row *matRowDef="let row; columns: displayedColumns;">
+                      </mat-row>
+                    </mat-table>
+                  
+                    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+                  </div>   
+  </div>
+  <hr>
+            </div>
+        </div>
+        <!-- Footer -->
+<footer class="footer text-center fixed-botom">
+    <div class="container-fluid">
+      <ul class="list-inline mb-5">
+        <li class="list-inline-item">
+          <a class="social-link rounded-circle text-white mr-3" href="#">
+            <i class="icon-social-facebook"></i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="social-link rounded-circle text-white mr-3" href="#">
+            <i class="icon-social-twitter"></i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="social-link rounded-circle text-white" href="#">
+            <i class="icon-social-github"></i>
+          </a>
+        </li>
+      </ul>
+      <p class="text-muted small mb-0">Copyright &copy; Your Website 2017</p>
+    </div>
+  </footer>
+        

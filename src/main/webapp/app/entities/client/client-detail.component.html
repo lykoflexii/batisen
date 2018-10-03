@@ -1,0 +1,64 @@
+
+<div *ngIf="client">
+    <h2><span jhiTranslate="gesBtpApp.client.detail.title">Client</span> {{client.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="gesBtpApp.client.nomClient">Nom Client</span></dt>
+        <dd>
+            <span>{{client.nomClient}}</span>
+        </dd>
+        <dt><span jhiTranslate="gesBtpApp.client.villeClient">Ville Client</span></dt>
+        <dd>
+            <span>{{client.villeClient}}</span>
+        </dd>
+        <dt><span jhiTranslate="gesBtpApp.client.adresseClient">Adresse Client</span></dt>
+        <dd>
+            <span>{{client.adresseClient}}</span>
+        </dd>
+        <dt><span jhiTranslate="gesBtpApp.client.telephoneClient">Telephone Client</span></dt>
+        <dd>
+            <span>{{client.telephoneClient}}</span>
+        </dd>
+        <dt><span jhiTranslate="gesBtpApp.client.fax">Fax</span></dt>
+        <dd>
+            <span>{{client.fax}}</span>
+        </dd>
+        <dt><span jhiTranslate="gesBtpApp.client.emailClient">Email Client</span></dt>
+        <dd>
+            <span>{{client.emailClient}}</span>
+        </dd>
+        <dt><span jhiTranslate="gesBtpApp.client.typeClient">Type Client</span></dt>
+        <dd>
+            <span jhiTranslate="{{'gesBtpApp.Type.' + client.typeClient}}">{{client.typeClient}}</span>
+        </dd>
+        <dt><span jhiTranslate="gesBtpApp.client.prenomClient">Prenom Client</span></dt>
+        <dd>
+            <span>{{client.prenomClient}}</span>
+        </dd>
+        <dt><span jhiTranslate="gesBtpApp.client.nomCommercial">Nom Commercial</span></dt>
+        <dd>
+            <span>{{client.nomCommercial}}</span>
+        </dd>
+        <dt><span jhiTranslate="gesBtpApp.client.entreprise">Entreprise</span></dt>
+        <dd>
+            <div *ngIf="client.entrepriseId">
+                <a [routerLink]="['/entreprise', client.entrepriseId]">{{client.entrepriseName}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'client/'+ client.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

@@ -1,0 +1,29 @@
+{
+    "entrepriseManagement": {
+        "home": {
+            "title": "Entreprises",
+            "createLabel": "Create a new entreprise",
+            "editLabel": "Edit a entreprise"
+        },
+        "delete": {
+            "question": "Are you sure you want to delete entreprise {{ name }}?"
+        },
+        "detail": {
+            "title": "Entreprise"
+        },
+        "createdBy": "Created by",
+        "createdDate": "Created date",
+        "lastModifiedBy": "Modified by",
+        "lastModifiedDate": "Modified date",
+        "entreprise": "Entreprise",
+        "entrepriseContact": "Contact",
+        "name": "Name"
+    },
+    "gesBtpApp": {
+        "entreprise": {
+            "created": "A new entreprise is created with identifier {{ param }}",
+            "updated": "A entreprise is updated with identifier {{ param }}",
+            "deleted": "A entreprise is deleted with identifier {{ param }}"
+        }
+    }
+}

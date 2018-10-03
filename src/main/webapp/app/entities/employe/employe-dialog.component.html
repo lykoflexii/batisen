@@ -1,0 +1,111 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myEmployeLabel" jhiTranslate="gesBtpApp.employe.home.createOrEditLabel">Create or edit a Employe</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!employe.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="employe.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="gesBtpApp.employe.nomEmploye" for="field_nomEmploye">Nom Employe</label>
+            <input type="text" class="form-control" name="nomEmploye" id="field_nomEmploye"
+                [(ngModel)]="employe.nomEmploye" required maxlength="50"/>
+            <div [hidden]="!(editForm.controls.nomEmploye?.dirty && editForm.controls.nomEmploye?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.nomEmploye?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.nomEmploye?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                   This field cannot be longer than 50 characters.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="gesBtpApp.employe.prenomEmploye" for="field_prenomEmploye">Prenom Employe</label>
+            <input type="text" class="form-control" name="prenomEmploye" id="field_prenomEmploye"
+                [(ngModel)]="employe.prenomEmploye" required maxlength="50"/>
+            <div [hidden]="!(editForm.controls.prenomEmploye?.dirty && editForm.controls.prenomEmploye?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.prenomEmploye?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.prenomEmploye?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                   This field cannot be longer than 50 characters.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="gesBtpApp.employe.matricule" for="field_matricule">Matricule</label>
+            <input type="text" class="form-control" name="matricule" id="field_matricule"
+                [(ngModel)]="employe.matricule" required/>
+            <div [hidden]="!(editForm.controls.matricule?.dirty && editForm.controls.matricule?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.matricule?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="gesBtpApp.employe.fonction" for="field_fonction">Fonction</label>
+            <input type="text" class="form-control" name="fonction" id="field_fonction"
+                [(ngModel)]="employe.fonction" required/>
+            <div [hidden]="!(editForm.controls.fonction?.dirty && editForm.controls.fonction?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.fonction?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="gesBtpApp.employe.dateNaissance" for="field_dateNaissance">Date Naissance</label>
+            <div class="input-group">
+                <input id="field_dateNaissance" type="text" class="form-control" name="dateNaissance" ngbDatepicker  #dateNaissanceDp="ngbDatepicker" [(ngModel)]="employe.dateNaissance"
+                />
+                <span class="input-group-append">
+                    <button type="button" class="btn btn-secondary" (click)="dateNaissanceDp.toggle()"><i class="fa fa-calendar"></i></button>
+                </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="gesBtpApp.employe.telephoneEmploye" for="field_telephoneEmploye">Telephone Employe</label>
+            <input type="text" class="form-control" name="telephoneEmploye" id="field_telephoneEmploye"
+                [(ngModel)]="employe.telephoneEmploye" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="gesBtpApp.employe.salaire" for="field_salaire">Salaire</label>
+            <input type="number" class="form-control" name="salaire" id="field_salaire"
+                [(ngModel)]="employe.salaire" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="gesBtpApp.employe.sexe" for="field_sexe">Sexe</label>
+            <select class="form-control" name="sexe" [(ngModel)]="employe.sexe" id="field_sexe" >
+                <option value="MASCULIN">{{'gesBtpApp.Sexe.MASCULIN' | translate}}</option>
+                <option value="FEMININ">{{'gesBtpApp.Sexe.FEMININ' | translate}}</option>
+            </select>
+        </div>
+<!-- 
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="gesBtpApp.employe.entreprise" for="field_entreprise">Entreprise</label>
+            <select class="form-control" id="field_entreprise" name="entreprise" [(ngModel)]="employe.entrepriseId" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="entrepriseOption.id" *ngFor="let entrepriseOption of entreprises; trackBy: trackEntrepriseById">{{entrepriseOption.name}}</option>
+            </select>
+        </div> -->
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

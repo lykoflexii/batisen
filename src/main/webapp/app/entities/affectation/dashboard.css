@@ -1,0 +1,48 @@
+.example-card {
+    max-width: 900px;
+  }
+  
+  .card-header {
+    background-color: #041470;
+  }
+  .example-header-image {
+    background-size: cover;
+  }
+  table {
+    width: 100%;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  
+  td, th {
+    width: 25%;
+  }
+  #chartdiv {
+    width: 100%;
+    height: 100%;
+    font-size: 11px;
+  }
+  
+  .amcharts-pie-slice {
+    transform: scale(1);
+    transform-origin: 50% 50%;
+    transition-duration: 0.3s;
+    transition: all .3s ease-out;
+    -webkit-transition: all .3s ease-out;
+    -moz-transition: all .3s ease-out;
+    -o-transition: all .3s ease-out;
+    cursor: pointer;
+    box-shadow: 0 0 30px 0 #000;
+  }
+  
+  .amcharts-pie-slice:hover {
+    transform: scale(1.1);
+    filter: url(#shadow);
+  }	
+    /* .material-icons.orange600 { color: #041470; }
+    .center {
+      text-align: center;
+    } */

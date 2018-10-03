@@ -1,0 +1,26 @@
+
+{
+    "gesBtpApp": {
+        "ligneDevis" : {
+            "home": {
+                "title": "LigneDevis",
+                "createLabel": "Créer un nouveau Ligne Devis",
+                "createOrEditLabel": "Créer ou éditer un Ligne Devis",
+                "search": "Recherche pour Ligne Devis"
+            },
+            "created": "Un nouveau Ligne Devis a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Ligne Devis avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Ligne Devis avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Ligne Devis {{ id }} ?"
+            },
+            "detail": {
+                "title": "Ligne Devis"
+            },
+            "designation": "Designation",
+            "prixUnitaire": "Prix Unitaire",
+            "quantite": "Quantite",
+            "devis": "Devis"
+        }
+    }
+}

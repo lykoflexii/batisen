@@ -1,0 +1,27 @@
+
+{
+    "gesBtpApp": {
+        "ligneFacture" : {
+            "home": {
+                "title": "LigneFactures",
+                "createLabel": "Créer un nouveau Ligne Facture",
+                "createOrEditLabel": "Créer ou éditer un Ligne Facture",
+                "search": "Recherche pour Ligne Facture"
+            },
+            "created": "Un nouveau Ligne Facture a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Ligne Facture avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Ligne Facture avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Ligne Facture {{ id }} ?"
+            },
+            "detail": {
+                "title": "Ligne Facture"
+            },
+            "designation": "Designation",
+            "prixUnitaire": "Prix Unitaire",
+            "quantite": "Quantite",
+            "quantiteRetenue": "Quantite Retenue",
+            "facture": "Facture"
+        }
+    }
+}

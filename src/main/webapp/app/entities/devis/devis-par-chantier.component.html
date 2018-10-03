@@ -1,0 +1,90 @@
+<br/><br/><br/><br/>
+<div class="container">
+<div  id="dev"  *ngIf="devis">
+
+        <table  cellspacing="20">
+            <tr>
+                <td> <h4><strong> N° Devis:</strong>&nbsp; {{devis.id}}</h4></td>
+                <td><h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h4></td>
+                <td><h4></h4></td>
+                <td> <h4><strong> client: </strong>&nbsp;&nbsp;{{client?.nomClient}}</h4></td>
+           </tr>
+           <tr>
+               
+            </tr>
+           <tr>
+                <td> <h4> <strong>&nbsp;&nbsp;Date:</strong>&nbsp; {{devis.dateDeCreation | date:'mediumDate'}}</h4></td>
+                <td><h4></h4></td>
+                <td><h4></h4></td>
+                <td> <h4><strong>Adresse:</strong>&nbsp;&nbsp; {{client?.adresseClient}}</h4></td>
+           </tr>
+           <tr>
+               
+           </tr>
+           <tr>
+                <td> <h4><strong>Validite:&nbsp;</strong> {{devis.validite | date:'mediumDate'}}</h4> </td>
+                <td><h4></h4></td>
+                <td><h4></h4></td>
+                <td><h4> <strong>Email:&nbsp;&nbsp;{{client?.emailClient}}<strong></h4> </td>
+           </tr>
+           <tr>
+                <td> <h4></h4> </td>
+                <td><h4><strong>Titre:&nbsp;</strong> {{devis.titre}}</h4></td>
+                <td><h4></h4></td>
+                <td><h4>  </td>
+           </tr>
+        </table>
+        <div>&nbsp;</div>
+        <div class="table-responsive" *ngIf="ligneDevis">
+                <table class="table">
+                    <thead>
+                    <tr>
+                    <th ><span jhiTranslate="gesBtpApp.ligneDevis.designation">Designation</span> </th>
+                    <th ><span jhiTranslate="gesBtpApp.ligneDevis.prixUnitaire">Prix Unitaire</span></th>
+                    <th ><span jhiTranslate="gesBtpApp.ligneDevis.quantite">Quantite</span></span></th>
+                    <th>Total</th>
+                    <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let ligneDevis of ligneDevis ;trackBy: trackId">
+                        <td>{{ligneDevis.designation}}</td>
+                        <td>{{ligneDevis.prixUnitaire}}</td>
+                        <td>{{ligneDevis.quantite}}</td>
+                        <td>
+                            {{ligneDevis.prixUnitaire * ligneDevis.quantite}}
+                        </td>
+                    </tr>
+                    </tbody>
+                    <tfoot>
+                            <tr>
+                              <th></th>
+                              <th></th>
+                              <th style="text-align:right">
+                                    TOTAL  HT <br/>
+                                    TOTAL TVA <br/>
+                                    TOTAL TTC 
+                              </th>
+                              <th>
+                                    {{total}} <br/>
+                                    {{totaltva}}<br/>
+                                    {{totalTTC}}
+                              </th>
+                              <th></th>
+                            </tr>
+                            
+                         </tfoot>
+                </table>
+            </div>
+</div>
+ <button *ngIf="devis" type="submit"  style="float:right;"
+            (click)="download()"
+            class="btn btn-info">
+        <span class="fa fa-file-pdf-o"></span>&nbsp;<span > Telecharger PDF</span>
+    </button>
+    <button *ngIf="!devis" type="submit"  style="float:right;"
+            (click)="download()"
+            class="btn btn-info">
+        <span class="fa fa-file-pdf-o"></span>&nbsp;<span > Modifier</span>
+    </button>
+</div>

@@ -1,0 +1,52 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "chantier",
+            "otherEntityName": "chantier",
+            "otherEntityField": "nomChantier"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "travaux",
+            "otherEntityName": "travaux",
+            "otherEntityField": "nomTrav"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "entreprise",
+            "otherEntityName": "entreprise",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "facture",
+            "otherEntityName": "ligneFacture",
+            "otherEntityRelationshipName": "facture"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "dateCreation",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "remise",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "valider",
+            "fieldType": "Boolean"
+        }
+    ],
+    "changelogDate": "20180703095850",
+    "dto": "mapstruct",
+    "service": "serviceClass",
+    "entityTableName": "facture",
+    "jpaMetamodelFiltering": false,
+    "pagination": "pagination"
+}

@@ -1,0 +1,57 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "client",
+            "otherEntityName": "client",
+            "otherEntityField": "nomClient"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "chantier",
+            "otherEntityName": "chantier",
+            "otherEntityField": "nomChantier"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "devis",
+            "otherEntityName": "ligneDevis",
+            "otherEntityRelationshipName": "devis"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "titre",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dateDeCreation",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "validite",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "tva",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "coutMainDoeuvre",
+            "fieldType": "Double"
+        }
+    ],
+    "changelogDate": "20180520004125",
+    "entityTableName": "devis",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false
+}

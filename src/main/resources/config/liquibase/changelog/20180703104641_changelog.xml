@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+   <changeSet author="Badjinka (generated)" id="1530614832136-1">
+      <createTable tableName="facture">
+         <column autoIncrement="true" name="id" type="BIGINT">
+            <constraints primaryKey="true" primaryKeyName="facturePK"/>
+         </column>
+         <column name="date_creation" type="BYTEA">
+            <constraints nullable="false"/>
+         </column>
+         <column name="remise" type="FLOAT8"/>
+         <column name="validite" type="BYTEA">
+            <constraints nullable="false"/>
+         </column>
+         <column name="chantier_id" type="BIGINT"/>
+         <column name="entreprise_id" type="BIGINT"/>
+         <column name="travaux_id" type="BIGINT"/>
+      </createTable>
+   </changeSet>
+   <changeSet author="Badjinka (generated)" id="1530614832136-2">
+      <createTable tableName="ligne_facture">
+         <column autoIncrement="true" name="id" type="BIGINT">
+            <constraints primaryKey="true" primaryKeyName="ligne_facturePK"/>
+         </column>
+         <column name="designation" type="VARCHAR(255)">
+            <constraints nullable="false"/>
+         </column>
+         <column name="prix_unitaire" type="FLOAT8">
+            <constraints nullable="false"/>
+         </column>
+         <column name="quantite" type="INT">
+            <constraints nullable="false"/>
+         </column>
+         <column name="facture_id" type="BIGINT"/>
+      </createTable>
+   </changeSet>
+   <changeSet author="Badjinka (generated)" id="1530614832136-3">
+      <addColumn tableName="devis">
+         <column name="cout_main_doeuvre" type="float8"/>
+      </addColumn>
+   </changeSet>
+   <changeSet author="Badjinka (generated)" id="1530614832136-4">
+      <addColumn tableName="client">
+         <column name="entreprise_id" type="int8"/>
+      </addColumn>
+   </changeSet>
+   <changeSet author="Badjinka (generated)" id="1530614832136-5">
+      <addColumn tableName="employe">
+         <column name="entreprise_id" type="int8"/>
+      </addColumn>
+   </changeSet>
+   <changeSet author="Badjinka (generated)" id="1530614832136-6">
+      <addColumn tableName="entreprise">
+         <column name="pack" type="int4"/>
+      </addColumn>
+   </changeSet>
+   <changeSet author="Badjinka (generated)" id="1530614832136-7">
+      <addColumn tableName="devis">
+         <column name="titre" type="varchar(255)"/>
+      </addColumn>
+   </changeSet>
+   <changeSet author="Badjinka (generated)" id="1530614832136-8">
+      <addColumn tableName="devis">
+         <column name="tva" type="float4"/>
+      </addColumn>
+   </changeSet>
+   <changeSet author="Badjinka (generated)" id="1530614832136-9">
+      <addColumn tableName="devis">
+         <column name="validite" type="bytea">
+            <constraints nullable="false"/>
+         </column>
+      </addColumn>
+   </changeSet>
+   <changeSet author="Badjinka (generated)" id="1530614832136-10">
+      <addForeignKeyConstraint baseColumnNames="entreprise_id"
+                               baseTableName="employe"
+                               constraintName="FK22sr6ih8tqqurpwkibg8m4f6y"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="entreprise"/>
+   </changeSet>
+   <changeSet author="Badjinka (generated)" id="1530614832136-11">
+      <addForeignKeyConstraint baseColumnNames="chantier_id"
+                               baseTableName="facture"
+                               constraintName="FK9vsygsj6rf0j4oh1xc96j8y4"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="chantier"/>
+   </changeSet>
+   <changeSet author="Badjinka (generated)" id="1530614832136-12">
+      <addForeignKeyConstraint baseColumnNames="travaux_id"
+                               baseTableName="facture"
+                               constraintName="FKk9b4uxg665yg9juy0vawsujq7"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="travaux"/>
+   </changeSet>
+   <changeSet author="Badjinka (generated)" id="1530614832136-13">
+      <addForeignKeyConstraint baseColumnNames="entreprise_id"
+                               baseTableName="facture"
+                               constraintName="FKkdtg46u7xnusk50lsp6257mk9"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="entreprise"/>
+   </changeSet>
+   <changeSet author="Badjinka (generated)" id="1530614832136-14">
+      <addForeignKeyConstraint baseColumnNames="entreprise_id"
+                               baseTableName="jhi_user"
+                               constraintName="FKlxbvmmjsmccppbq5dl7r2bgls"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="entreprise"/>
+   </changeSet>
+   <changeSet author="Badjinka (generated)" id="1530614832136-15">
+      <addForeignKeyConstraint baseColumnNames="entreprise_id"
+                               baseTableName="client"
+                               constraintName="FKs1ssfo0wew5hbq5tlimqjb26m"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="entreprise"/>
+   </changeSet>
+   <changeSet author="Badjinka (generated)" id="1530614832136-16">
+      <addForeignKeyConstraint baseColumnNames="facture_id"
+                               baseTableName="ligne_facture"
+                               constraintName="FKsqu9tafl4p72j8lym8xl42kg1"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="facture"/>
+   </changeSet>
+   <changeSet author="Badjinka (generated)" id="1530614832136-17">
+      <dropUniqueConstraint constraintName="jhi_social_user_connection_user_id_provider_id_provider_use_key"
+                            tableName="jhi_social_user_connection"/>
+   </changeSet>
+   <changeSet author="Badjinka (generated)" id="1530614832136-18">
+      <dropUniqueConstraint constraintName="jhi_social_user_connection_user_id_provider_id_rank_key"
+                            tableName="jhi_social_user_connection"/>
+   </changeSet>
+</databaseChangeLog>

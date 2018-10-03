@@ -1,0 +1,31 @@
+
+{
+    "gesBtpApp": {
+        "entreprise" : {
+            "home": {
+                "title": "Entreprises",
+                "createLabel": "Create a new Entreprise",
+                "createOrEditLabel": "Create or edit a Entreprise",
+                "search": "Search for Entreprise"
+            },
+            "created": "A new Entreprise is created with identifier {{ param }}",
+            "updated": "A Entreprise is updated with identifier {{ param }}",
+            "deleted": "A Entreprise is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Entreprise {{ id }}?"
+            },
+            "detail": {
+                "title": "Entreprise"
+            },
+            "name": "Name",
+            "commercialName": "Commercial Name",
+            "sirenNumber": "Siren Number",
+            "entrepriseAdminEmail": "Entreprise Admin Email",
+            "telephone": "Telephone",
+            "pack": "Pack",
+            "client": "Client",
+            "employe": "Employe",
+            "facture4": "Facture 4"
+        }
+    }
+}

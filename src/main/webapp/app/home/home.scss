@@ -1,0 +1,1444 @@
+
+/* ==========================================================================
+Main page styles
+========================================================================== */
+.hipster {
+    display: inline-block;
+    width: 347px;
+    height: 497px;
+    background: url("../../content/images/hipster.png") no-repeat center top;
+    background-size: contain;
+}
+
+.card-header {
+    background-color: #041470;
+}
+
+.btn-outline {
+    color: #000000;
+    background-color: #FFFFFF;
+    border-color: #041470;
+}
+
+.fa {
+    font-size: 50px;
+    color: #FFFFFF;
+}
+
+.btn-outline:hover,
+.btn-outline:focus,
+.btn-outline:active,
+.btn-outline.active,
+.open .dropdown-toggle.btn-outline {
+    color: #000000;
+    background-color: #041470;
+    border-color: #041470;
+}
+
+.btn-outline:active,
+.btn-outline.active,
+.open .dropdown-toggle.btn-outline {
+    background-image: none;
+}
+
+.btn-outline.disabled,
+.btn-outline[disabled],
+fieldset[disabled] .btn-outline,
+.btn-outline.disabled:hover,
+.btn-outline[disabled]:hover,
+fieldset[disabled] .btn-outline:hover,
+.btn-outline.disabled:focus,
+.btn-outline[disabled]:focus,
+fieldset[disabled] .btn-outline:focus,
+.btn-outline.disabled:active,
+.btn-outline[disabled]:active,
+fieldset[disabled] .btn-outline:active,
+.btn-outline.disabled.active,
+.btn-outline[disabled].active,
+fieldset[disabled] .btn-outline.active {
+    background-color: #FFFFFF;
+    border-color: #041470;
+}
+
+.btn-outline .badge {
+    color: #FFFFFF;
+    background-color: #000000;
+}
+
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+
+/* wait autoprefixer update to allow simple generation of high pixel density media query */
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (   min--moz-device-pixel-ratio: 2),
+only screen and (     -o-min-device-pixel-ratio: 2/1),
+only screen and (        min-device-pixel-ratio: 2),
+only screen and (                min-resolution: 192dpi),
+only screen and (                min-resolution: 2dppx) {
+    .hipster {
+        background: url("../../content/images/hipster2x.png") no-repeat center top;
+        background-size: contain;
+    }
+}
+body,
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: 'Source Sans Pro';
+}
+
+.btn-xl {
+  padding: 1.25rem 2.5rem;
+}
+
+.content-section {
+  padding-top: 7.5rem;
+  padding-bottom: 7.5rem;
+}
+
+.content-section-heading h2 {
+  font-size: 3rem;
+}
+
+.content-section-heading h3 {
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+}
+
+.text-faded {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Map */
+.map {
+  height: 30rem;
+}
+
+@media (max-width: 992px) {
+  .map {
+    height: 75%;
+  }
+}
+
+.map iframe {
+  pointer-events: none;
+}
+
+.scroll-to-top {
+  position: fixed;
+  right: 15px;
+  bottom: 15px;
+  display: none;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  color: white;
+  background: rgba(52, 58, 64, 0.5);
+  line-height: 45px;
+}
+
+.scroll-to-top:focus, .scroll-to-top:hover {
+  color: white;
+}
+
+.scroll-to-top:hover {
+  background: #343a40;
+}
+
+.scroll-to-top i {
+  font-weight: 800;
+}
+
+.masthead {
+  min-height: 30rem;
+  position: relative;
+  display: table;
+  width: 100%;
+  height: auto;
+  padding-top: 1;
+  padding-bottom: 0;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("img/img.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #FFFFFF;
+  z-index: -2;
+}
+
+#tres {
+  background: rgba(0, 0, 0, 0.1);
+  padding: 1%;
+}
+
+.masthead h1 {
+  font-size: 4rem;
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 992px) {
+  .masthead {
+    height: 100vh;
+  }
+  .masthead h1 {
+    font-size: 5.5rem;
+  }
+}
+
+/* Side Menu */
+#sidebar-wrapper {
+  position: fixed;
+  z-index: 2;
+  right: 0;
+  width: 250px;
+  height: 100%;
+  -webkit-transition: all 0.4s ease 0s;
+  -moz-transition: all 0.4s ease 0s;
+  -ms-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+  transform: translateX(250px);
+  background: #1D809F;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-nav {
+  position: absolute;
+  top: 0;
+  width: 250px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sidebar-nav li.sidebar-nav-item a {
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  padding: 15px;
+}
+
+.sidebar-nav li a:hover {
+  text-decoration: none;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+  text-decoration: none;
+}
+
+.sidebar-nav > .sidebar-brand {
+  font-size: 1.2rem;
+  background: rgba(52, 58, 64, 0.1);
+  height: 80px;
+  line-height: 50px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 15px;
+}
+
+.sidebar-nav > .sidebar-brand a {
+  color: #fff;
+}
+
+.sidebar-nav > .sidebar-brand a:hover {
+  color: #fff;
+  background: none;
+}
+
+#sidebar-wrapper.active {
+  right: 250px;
+  width: 250px;
+  -webkit-transition: all 0.4s ease 0s;
+  -moz-transition: all 0.4s ease 0s;
+  -ms-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+}
+
+.menu-toggle {
+  position: fixed;
+  right: 15px;
+  top: 15px;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  color: #fff;
+  background: rgba(52, 58, 64, 0.5);
+  line-height: 50px;
+  z-index: 999;
+}
+
+.menu-toggle:focus, .menu-toggle:hover {
+  color: #fff;
+}
+
+.menu-toggle:hover {
+  background: #343a40;
+}
+
+.service-icon {
+  background-color: #fff;
+  color: #1D809F;
+  height: 7rem;
+  width: 7rem;
+  display: block;
+  line-height: 7.5rem;
+  font-size: 2.25rem;
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.callout {
+  padding: 0;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("img/bg-callout.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.callout h2 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  display: block;
+  max-width: 30rem;
+}
+
+.portfolio-item {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  max-width: 100%;
+  margin: auto auto 1rem;
+}
+
+.portfolio-item .caption {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(33, 37, 41, 0.2);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.portfolio-item .caption .caption-content {
+  color: #fff;
+  margin: auto 2rem 2rem;
+}
+
+.portfolio-item .caption .caption-content h2 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+.portfolio-item .caption .caption-content p {
+  font-weight: 300;
+  font-size: 1.2rem;
+}
+
+@media (min-width: 992px) {
+  .portfolio-item {
+    max-width: none;
+    margin: 0;
+  }
+  .portfolio-item .caption {
+    -webkit-transition: -webkit-clip-path 0.25s ease-out, background-color 0.7s;
+    -webkit-clip-path: inset(0px);
+    clip-path: inset(0px);
+  }
+  .portfolio-item .caption .caption-content {
+    transition: opacity 0.25s;
+    margin-left: 5rem;
+    margin-right: 5rem;
+    margin-bottom: 5rem;
+  }
+  .portfolio-item img {
+    -webkit-transition: -webkit-clip-path 0.25s ease-out;
+    -webkit-clip-path: inset(-1px);
+    clip-path: inset(-1px);
+  }
+  .portfolio-item:hover img {
+    -webkit-clip-path: inset(2rem);
+    clip-path: inset(2rem);
+  }
+  .portfolio-item:hover .caption {
+    background-color: rgba(29, 128, 159, 0.9);
+    -webkit-clip-path: inset(2rem);
+    clip-path: inset(2rem);
+  }
+}
+
+footer.footer {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+footer.footer .social-link {
+  display: block;
+  height: 4rem;
+  width: 4rem;
+  line-height: 4.3rem;
+  font-size: 1.5rem;
+  background-color: #1D809F;
+  transition: background-color 0.15s ease-in-out;
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+footer.footer .social-link:hover {
+  background-color: #155d74;
+  text-decoration: none;
+}
+
+a {
+  color: #041470;
+}
+
+a:hover, a:focus, a:active {
+  color: #155d74;
+}
+
+.btn-primary {
+  background-color: #1D809F !important;
+  border-color: #1D809F !important;
+  color: #fff !important;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+  background-color: #155d74 !important;
+  border-color: #155d74 !important;
+}
+
+.btn-secondary {
+  background-color: #ecb807 !important;
+  border-color: #ecb807 !important;
+  color: #fff !important;
+}
+
+.btn-secondary:hover, .btn-secondary:focus, .btn-secondary:active {
+  background-color: #ba9106 !important;
+  border-color: #ba9106 !important;
+}
+
+.btn-dark {
+  color: #fff !important;
+}
+
+.btn {
+  box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.1);
+  font-weight: 700;
+}
+
+.bg-primary {
+  background-color: #1D809F !important;
+}
+
+.text-primary {
+  color: #1D809F !important;
+}
+
+.text-secondary {
+  color: #ecb807 !important;
+}
+
+// Default Variables
+$simple-line-font-path: "/fonts/" !default;
+$simple-line-font-family: "simple-line-icons" !default;
+$simple-line-icon-prefix: "icon-" !default;
+
+// Fonts
+@if $simple-line-font-family == "simple-line-icons" {
+  @font-face {
+    font-family: '#{$simple-line-font-family}';
+    src:    url('#{$simple-line-font-path}Simple-Line-Icons.eot?v=2.4.0');
+    src:    url('#{$simple-line-font-path}Simple-Line-Icons.eot?v=2.4.0#iefix') format('embedded-opentype'),
+            url('#{$simple-line-font-path}Simple-Line-Icons.woff2?v=2.4.0') format('woff2'),
+            url('#{$simple-line-font-path}Simple-Line-Icons.ttf?v=2.4.0') format('truetype'),
+            url('#{$simple-line-font-path}Simple-Line-Icons.woff?v=2.4.0') format('woff'),
+            url('#{$simple-line-font-path}Simple-Line-Icons.svg?v=2.4.0#simple-line-icons') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+}
+
+.#{$simple-line-icon-prefix} {
+  &user,
+  &people,
+  &user-female,
+  &user-follow,
+  &user-following,
+  &user-unfollow,
+  &login,
+  &logout,
+  &emotsmile,
+  &phone,
+  &call-end,
+  &call-in,
+  &call-out,
+  &map,
+  &location-pin,
+  &direction,
+  &directions,
+  &compass,
+  &layers,
+  &menu,
+  &list,
+  &options-vertical,
+  &options,
+  &arrow-down,
+  &arrow-left,
+  &arrow-right,
+  &arrow-up,
+  &arrow-up-circle,
+  &arrow-left-circle,
+  &arrow-right-circle,
+  &arrow-down-circle,
+  &check,
+  &clock,
+  &plus,
+  &minus,
+  &close,
+  &event,
+  &exclamation,
+  &organization,
+  &trophy,
+  &screen-smartphone,
+  &screen-desktop,
+  &plane,
+  &notebook,
+  &mustache,
+  &mouse,
+  &magnet,
+  &energy,
+  &disc,
+  &cursor,
+  &cursor-move,
+  &crop,
+  &chemistry,
+  &speedometer,
+  &shield,
+  &screen-tablet,
+  &magic-wand,
+  &hourglass,
+  &graduation,
+  &ghost,
+  &game-controller,
+  &fire,
+  &eyeglass,
+  &envelope-open,
+  &envelope-letter,
+  &bell,
+  &badge,
+  &anchor,
+  &wallet,
+  &vector,
+  &speech,
+  &puzzle,
+  &printer,
+  &present,
+  &playlist,
+  &pin,
+  &picture,
+  &handbag,
+  &globe-alt,
+  &globe,
+  &folder-alt,
+  &folder,
+  &film,
+  &feed,
+  &drop,
+  &drawer,
+  &docs,
+  &doc,
+  &diamond,
+  &cup,
+  &calculator,
+  &bubbles,
+  &briefcase,
+  &book-open,
+  &basket-loaded,
+  &basket,
+  &bag,
+  &action-undo,
+  &action-redo,
+  &wrench,
+  &umbrella,
+  &trash,
+  &tag,
+  &support,
+  &frame,
+  &size-fullscreen,
+  &size-actual,
+  &shuffle,
+  &share-alt,
+  &share,
+  &rocket,
+  &question,
+  &pie-chart,
+  &pencil,
+  &note,
+  &loop,
+  &home,
+  &grid,
+  &graph,
+  &microphone,
+  &music-tone-alt,
+  &music-tone,
+  &earphones-alt,
+  &earphones,
+  &equalizer,
+  &like,
+  &dislike,
+  &control-start,
+  &control-rewind,
+  &control-play,
+  &control-pause,
+  &control-forward,
+  &control-end,
+  &volume-1,
+  &volume-2,
+  &volume-off,
+  &calendar,
+  &bulb,
+  &chart,
+  &ban,
+  &bubble,
+  &camrecorder,
+  &camera,
+  &cloud-download,
+  &cloud-upload,
+  &envelope,
+  &eye,
+  &flag,
+  &heart,
+  &info,
+  &key,
+  &link,
+  &lock,
+  &lock-open,
+  &magnifier,
+  &magnifier-add,
+  &magnifier-remove,
+  &paper-clip,
+  &paper-plane,
+  &power,
+  &refresh,
+  &reload,
+  &settings,
+  &star,
+  &symbol-female,
+  &symbol-male,
+  &target,
+  &credit-card,
+  &paypal,
+  &social-tumblr,
+  &social-twitter,
+  &social-facebook,
+  &social-instagram,
+  &social-linkedin,
+  &social-pinterest,
+  &social-github,
+  &social-google,
+  &social-reddit,
+  &social-skype,
+  &social-dribbble,
+  &social-behance,
+  &social-foursqare,
+  &social-soundcloud,
+  &social-spotify,
+  &social-stumbleupon,
+  &social-youtube,
+  &social-dropbox,
+  &social-vkontakte,
+  &social-steam {
+    font-family: '#{$simple-line-font-family}';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+ }
+}
+
+.#{$simple-line-icon-prefix}user:before {
+  content: "\e005";
+}
+
+.#{$simple-line-icon-prefix}people:before {
+  content: "\e001";
+}
+
+.#{$simple-line-icon-prefix}user-female:before {
+  content: "\e000";
+}
+
+.#{$simple-line-icon-prefix}user-follow:before {
+  content: "\e002";
+}
+
+.#{$simple-line-icon-prefix}user-following:before {
+  content: "\e003";
+}
+
+.#{$simple-line-icon-prefix}user-unfollow:before {
+  content: "\e004";
+}
+
+.#{$simple-line-icon-prefix}login:before {
+  content: "\e066";
+}
+
+.#{$simple-line-icon-prefix}logout:before {
+  content: "\e065";
+}
+
+.#{$simple-line-icon-prefix}emotsmile:before {
+  content: "\e021";
+}
+
+.#{$simple-line-icon-prefix}phone:before {
+  content: "\e600";
+}
+
+.#{$simple-line-icon-prefix}call-end:before {
+  content: "\e048";
+}
+
+.#{$simple-line-icon-prefix}call-in:before {
+  content: "\e047";
+}
+
+.#{$simple-line-icon-prefix}call-out:before {
+  content: "\e046";
+}
+
+.#{$simple-line-icon-prefix}map:before {
+  content: "\e033";
+}
+
+.#{$simple-line-icon-prefix}location-pin:before {
+  content: "\e096";
+}
+
+.#{$simple-line-icon-prefix}direction:before {
+  content: "\e042";
+}
+
+.#{$simple-line-icon-prefix}directions:before {
+  content: "\e041";
+}
+
+.#{$simple-line-icon-prefix}compass:before {
+  content: "\e045";
+}
+
+.#{$simple-line-icon-prefix}layers:before {
+  content: "\e034";
+}
+
+.#{$simple-line-icon-prefix}menu:before {
+  content: "\e601";
+}
+
+.#{$simple-line-icon-prefix}list:before {
+  content: "\e067";
+}
+
+.#{$simple-line-icon-prefix}options-vertical:before {
+  content: "\e602";
+}
+
+.#{$simple-line-icon-prefix}options:before {
+  content: "\e603";
+}
+
+.#{$simple-line-icon-prefix}arrow-down:before {
+  content: "\e604";
+}
+
+.#{$simple-line-icon-prefix}arrow-left:before {
+  content: "\e605";
+}
+
+.#{$simple-line-icon-prefix}arrow-right:before {
+  content: "\e606";
+}
+
+.#{$simple-line-icon-prefix}arrow-up:before {
+  content: "\e607";
+}
+
+.#{$simple-line-icon-prefix}arrow-up-circle:before {
+  content: "\e078";
+}
+
+.#{$simple-line-icon-prefix}arrow-left-circle:before {
+  content: "\e07a";
+}
+
+.#{$simple-line-icon-prefix}arrow-right-circle:before {
+  content: "\e079";
+}
+
+.#{$simple-line-icon-prefix}arrow-down-circle:before {
+  content: "\e07b";
+}
+
+.#{$simple-line-icon-prefix}check:before {
+  content: "\e080";
+}
+
+.#{$simple-line-icon-prefix}clock:before {
+  content: "\e081";
+}
+
+.#{$simple-line-icon-prefix}plus:before {
+  content: "\e095";
+}
+
+.#{$simple-line-icon-prefix}minus:before {
+  content: "\e615";
+}
+
+.#{$simple-line-icon-prefix}close:before {
+  content: "\e082";
+}
+
+.#{$simple-line-icon-prefix}event:before {
+  content: "\e619";
+}
+
+.#{$simple-line-icon-prefix}exclamation:before {
+  content: "\e617";
+}
+
+.#{$simple-line-icon-prefix}organization:before {
+  content: "\e616";
+}
+
+.#{$simple-line-icon-prefix}trophy:before {
+  content: "\e006";
+}
+
+.#{$simple-line-icon-prefix}screen-smartphone:before {
+  content: "\e010";
+}
+
+.#{$simple-line-icon-prefix}screen-desktop:before {
+  content: "\e011";
+}
+
+.#{$simple-line-icon-prefix}plane:before {
+  content: "\e012";
+}
+
+.#{$simple-line-icon-prefix}notebook:before {
+  content: "\e013";
+}
+
+.#{$simple-line-icon-prefix}mustache:before {
+  content: "\e014";
+}
+
+.#{$simple-line-icon-prefix}mouse:before {
+  content: "\e015";
+}
+
+.#{$simple-line-icon-prefix}magnet:before {
+  content: "\e016";
+}
+
+.#{$simple-line-icon-prefix}energy:before {
+  content: "\e020";
+}
+
+.#{$simple-line-icon-prefix}disc:before {
+  content: "\e022";
+}
+
+.#{$simple-line-icon-prefix}cursor:before {
+  content: "\e06e";
+}
+
+.#{$simple-line-icon-prefix}cursor-move:before {
+  content: "\e023";
+}
+
+.#{$simple-line-icon-prefix}crop:before {
+  content: "\e024";
+}
+
+.#{$simple-line-icon-prefix}chemistry:before {
+  content: "\e026";
+}
+
+.#{$simple-line-icon-prefix}speedometer:before {
+  content: "\e007";
+}
+
+.#{$simple-line-icon-prefix}shield:before {
+  content: "\e00e";
+}
+
+.#{$simple-line-icon-prefix}screen-tablet:before {
+  content: "\e00f";
+}
+
+.#{$simple-line-icon-prefix}magic-wand:before {
+  content: "\e017";
+}
+
+.#{$simple-line-icon-prefix}hourglass:before {
+  content: "\e018";
+}
+
+.#{$simple-line-icon-prefix}graduation:before {
+  content: "\e019";
+}
+
+.#{$simple-line-icon-prefix}ghost:before {
+  content: "\e01a";
+}
+
+.#{$simple-line-icon-prefix}game-controller:before {
+  content: "\e01b";
+}
+
+.#{$simple-line-icon-prefix}fire:before {
+  content: "\e01c";
+}
+
+.#{$simple-line-icon-prefix}eyeglass:before {
+  content: "\e01d";
+}
+
+.#{$simple-line-icon-prefix}envelope-open:before {
+  content: "\e01e";
+}
+
+.#{$simple-line-icon-prefix}envelope-letter:before {
+  content: "\e01f";
+}
+
+.#{$simple-line-icon-prefix}bell:before {
+  content: "\e027";
+}
+
+.#{$simple-line-icon-prefix}badge:before {
+  content: "\e028";
+}
+
+.#{$simple-line-icon-prefix}anchor:before {
+  content: "\e029";
+}
+
+.#{$simple-line-icon-prefix}wallet:before {
+  content: "\e02a";
+}
+
+.#{$simple-line-icon-prefix}vector:before {
+  content: "\e02b";
+}
+
+.#{$simple-line-icon-prefix}speech:before {
+  content: "\e02c";
+}
+
+.#{$simple-line-icon-prefix}puzzle:before {
+  content: "\e02d";
+}
+
+.#{$simple-line-icon-prefix}printer:before {
+  content: "\e02e";
+}
+
+.#{$simple-line-icon-prefix}present:before {
+  content: "\e02f";
+}
+
+.#{$simple-line-icon-prefix}playlist:before {
+  content: "\e030";
+}
+
+.#{$simple-line-icon-prefix}pin:before {
+  content: "\e031";
+}
+
+.#{$simple-line-icon-prefix}picture:before {
+  content: "\e032";
+}
+
+.#{$simple-line-icon-prefix}handbag:before {
+  content: "\e035";
+}
+
+.#{$simple-line-icon-prefix}globe-alt:before {
+  content: "\e036";
+}
+
+.#{$simple-line-icon-prefix}globe:before {
+  content: "\e037";
+}
+
+.#{$simple-line-icon-prefix}folder-alt:before {
+  content: "\e039";
+}
+
+.#{$simple-line-icon-prefix}folder:before {
+  content: "\e089";
+}
+
+.#{$simple-line-icon-prefix}film:before {
+  content: "\e03a";
+}
+
+.#{$simple-line-icon-prefix}feed:before {
+  content: "\e03b";
+}
+
+.#{$simple-line-icon-prefix}drop:before {
+  content: "\e03e";
+}
+
+.#{$simple-line-icon-prefix}drawer:before {
+  content: "\e03f";
+}
+
+.#{$simple-line-icon-prefix}docs:before {
+  content: "\e040";
+}
+
+.#{$simple-line-icon-prefix}doc:before {
+  content: "\e085";
+}
+
+.#{$simple-line-icon-prefix}diamond:before {
+  content: "\e043";
+}
+
+.#{$simple-line-icon-prefix}cup:before {
+  content: "\e044";
+}
+
+.#{$simple-line-icon-prefix}calculator:before {
+  content: "\e049";
+}
+
+.#{$simple-line-icon-prefix}bubbles:before {
+  content: "\e04a";
+}
+
+.#{$simple-line-icon-prefix}briefcase:before {
+  content: "\e04b";
+}
+
+.#{$simple-line-icon-prefix}book-open:before {
+  content: "\e04c";
+}
+
+.#{$simple-line-icon-prefix}basket-loaded:before {
+  content: "\e04d";
+}
+
+.#{$simple-line-icon-prefix}basket:before {
+  content: "\e04e";
+}
+
+.#{$simple-line-icon-prefix}bag:before {
+  content: "\e04f";
+}
+
+.#{$simple-line-icon-prefix}action-undo:before {
+  content: "\e050";
+}
+
+.#{$simple-line-icon-prefix}action-redo:before {
+  content: "\e051";
+}
+
+.#{$simple-line-icon-prefix}wrench:before {
+  content: "\e052";
+}
+
+.#{$simple-line-icon-prefix}umbrella:before {
+  content: "\e053";
+}
+
+.#{$simple-line-icon-prefix}trash:before {
+  content: "\e054";
+}
+
+.#{$simple-line-icon-prefix}tag:before {
+  content: "\e055";
+}
+
+.#{$simple-line-icon-prefix}support:before {
+  content: "\e056";
+}
+
+.#{$simple-line-icon-prefix}frame:before {
+  content: "\e038";
+}
+
+.#{$simple-line-icon-prefix}size-fullscreen:before {
+  content: "\e057";
+}
+
+.#{$simple-line-icon-prefix}size-actual:before {
+  content: "\e058";
+}
+
+.#{$simple-line-icon-prefix}shuffle:before {
+  content: "\e059";
+}
+
+.#{$simple-line-icon-prefix}share-alt:before {
+  content: "\e05a";
+}
+
+.#{$simple-line-icon-prefix}share:before {
+  content: "\e05b";
+}
+
+.#{$simple-line-icon-prefix}rocket:before {
+  content: "\e05c";
+}
+
+.#{$simple-line-icon-prefix}question:before {
+  content: "\e05d";
+}
+
+.#{$simple-line-icon-prefix}pie-chart:before {
+  content: "\e05e";
+}
+
+.#{$simple-line-icon-prefix}pencil:before {
+  content: "\e05f";
+}
+
+.#{$simple-line-icon-prefix}note:before {
+  content: "\e060";
+}
+
+.#{$simple-line-icon-prefix}loop:before {
+  content: "\e064";
+}
+
+.#{$simple-line-icon-prefix}home:before {
+  content: "\e069";
+}
+
+.#{$simple-line-icon-prefix}grid:before {
+  content: "\e06a";
+}
+
+.#{$simple-line-icon-prefix}graph:before {
+  content: "\e06b";
+}
+
+.#{$simple-line-icon-prefix}microphone:before {
+  content: "\e063";
+}
+
+.#{$simple-line-icon-prefix}music-tone-alt:before {
+  content: "\e061";
+}
+
+.#{$simple-line-icon-prefix}music-tone:before {
+  content: "\e062";
+}
+
+.#{$simple-line-icon-prefix}earphones-alt:before {
+  content: "\e03c";
+}
+
+.#{$simple-line-icon-prefix}earphones:before {
+  content: "\e03d";
+}
+
+.#{$simple-line-icon-prefix}equalizer:before {
+  content: "\e06c";
+}
+
+.#{$simple-line-icon-prefix}like:before {
+  content: "\e068";
+}
+
+.#{$simple-line-icon-prefix}dislike:before {
+  content: "\e06d";
+}
+
+.#{$simple-line-icon-prefix}control-start:before {
+  content: "\e06f";
+}
+
+.#{$simple-line-icon-prefix}control-rewind:before {
+  content: "\e070";
+}
+
+.#{$simple-line-icon-prefix}control-play:before {
+  content: "\e071";
+}
+
+.#{$simple-line-icon-prefix}control-pause:before {
+  content: "\e072";
+}
+
+.#{$simple-line-icon-prefix}control-forward:before {
+  content: "\e073";
+}
+
+.#{$simple-line-icon-prefix}control-end:before {
+  content: "\e074";
+}
+
+.#{$simple-line-icon-prefix}volume-1:before {
+  content: "\e09f";
+}
+
+.#{$simple-line-icon-prefix}volume-2:before {
+  content: "\e0a0";
+}
+
+.#{$simple-line-icon-prefix}volume-off:before {
+  content: "\e0a1";
+}
+
+.#{$simple-line-icon-prefix}calendar:before {
+  content: "\e075";
+}
+
+.#{$simple-line-icon-prefix}bulb:before {
+  content: "\e076";
+}
+
+.#{$simple-line-icon-prefix}chart:before {
+  content: "\e077";
+}
+
+.#{$simple-line-icon-prefix}ban:before {
+  content: "\e07c";
+}
+
+.#{$simple-line-icon-prefix}bubble:before {
+  content: "\e07d";
+}
+
+.#{$simple-line-icon-prefix}camrecorder:before {
+  content: "\e07e";
+}
+
+.#{$simple-line-icon-prefix}camera:before {
+  content: "\e07f";
+}
+
+.#{$simple-line-icon-prefix}cloud-download:before {
+  content: "\e083";
+}
+
+.#{$simple-line-icon-prefix}cloud-upload:before {
+  content: "\e084";
+}
+
+.#{$simple-line-icon-prefix}envelope:before {
+  content: "\e086";
+}
+
+.#{$simple-line-icon-prefix}eye:before {
+  content: "\e087";
+}
+
+.#{$simple-line-icon-prefix}flag:before {
+  content: "\e088";
+}
+
+.#{$simple-line-icon-prefix}heart:before {
+  content: "\e08a";
+}
+
+.#{$simple-line-icon-prefix}info:before {
+  content: "\e08b";
+}
+
+.#{$simple-line-icon-prefix}key:before {
+  content: "\e08c";
+}
+
+.#{$simple-line-icon-prefix}link:before {
+  content: "\e08d";
+}
+
+.#{$simple-line-icon-prefix}lock:before {
+  content: "\e08e";
+}
+
+.#{$simple-line-icon-prefix}lock-open:before {
+  content: "\e08f";
+}
+
+.#{$simple-line-icon-prefix}magnifier:before {
+  content: "\e090";
+}
+
+.#{$simple-line-icon-prefix}magnifier-add:before {
+  content: "\e091";
+}
+
+.#{$simple-line-icon-prefix}magnifier-remove:before {
+  content: "\e092";
+}
+
+.#{$simple-line-icon-prefix}paper-clip:before {
+  content: "\e093";
+}
+
+.#{$simple-line-icon-prefix}paper-plane:before {
+  content: "\e094";
+}
+
+.#{$simple-line-icon-prefix}power:before {
+  content: "\e097";
+}
+
+.#{$simple-line-icon-prefix}refresh:before {
+  content: "\e098";
+}
+
+.#{$simple-line-icon-prefix}reload:before {
+  content: "\e099";
+}
+
+.#{$simple-line-icon-prefix}settings:before {
+  content: "\e09a";
+}
+
+.#{$simple-line-icon-prefix}star:before {
+  content: "\e09b";
+}
+
+.#{$simple-line-icon-prefix}symbol-female:before {
+  content: "\e09c";
+}
+
+.#{$simple-line-icon-prefix}symbol-male:before {
+  content: "\e09d";
+}
+
+.#{$simple-line-icon-prefix}target:before {
+  content: "\e09e";
+}
+
+.#{$simple-line-icon-prefix}credit-card:before {
+  content: "\e025";
+}
+
+.#{$simple-line-icon-prefix}paypal:before {
+  content: "\e608";
+}
+
+.#{$simple-line-icon-prefix}social-tumblr:before {
+  content: "\e00a";
+}
+
+.#{$simple-line-icon-prefix}social-twitter:before {
+  content: "\e009";
+}
+
+.#{$simple-line-icon-prefix}social-facebook:before {
+  content: "\e00b";
+}
+
+.#{$simple-line-icon-prefix}social-instagram:before {
+  content: "\e609";
+}
+
+.#{$simple-line-icon-prefix}social-linkedin:before {
+  content: "\e60a";
+}
+
+.#{$simple-line-icon-prefix}social-pinterest:before {
+  content: "\e60b";
+}
+
+.#{$simple-line-icon-prefix}social-github:before {
+  content: "\e60c";
+}
+
+.#{$simple-line-icon-prefix}social-google:before {
+  content: "\e60d";
+}
+
+.#{$simple-line-icon-prefix}social-reddit:before {
+  content: "\e60e";
+}
+
+.#{$simple-line-icon-prefix}social-skype:before {
+  content: "\e60f";
+}
+
+.#{$simple-line-icon-prefix}social-dribbble:before {
+  content: "\e00d";
+}
+
+.#{$simple-line-icon-prefix}social-behance:before {
+  content: "\e610";
+}
+
+.#{$simple-line-icon-prefix}social-foursqare:before {
+  content: "\e611";
+}
+
+.#{$simple-line-icon-prefix}social-soundcloud:before {
+  content: "\e612";
+}
+
+.#{$simple-line-icon-prefix}social-spotify:before {
+  content: "\e613";
+}
+
+.#{$simple-line-icon-prefix}social-stumbleupon:before {
+  content: "\e614";
+}
+
+.#{$simple-line-icon-prefix}social-youtube:before {
+  content: "\e008";
+}
+
+.#{$simple-line-icon-prefix}social-dropbox:before {
+  content: "\e00c";
+}
+
+.#{$simple-line-icon-prefix}social-vkontakte:before {
+  content: "\e618";
+}
+
+.#{$simple-line-icon-prefix}social-steam:before {
+  content: "\e620";
+}

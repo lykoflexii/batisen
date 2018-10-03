@@ -1,0 +1,9 @@
+{
+    "gesBtpApp": {
+        "Type" : {
+            "null": "",
+            "PARTICULIER": "PARTICULIER",
+            "PROFESSIONNEL": "PROFESSIONNEL"
+        }
+    }
+}

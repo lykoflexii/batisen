@@ -1,0 +1,95 @@
+<div>
+    <h2>
+        <span jhiTranslate="gesBtpApp.affectation.home.title">Affectations</span>
+        <button class="btn btn-primary float-right jh-create-entity create-affectation" [routerLink]="['/', { outlets: { popup: ['affectation-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span class="hidden-sm-down"  jhiTranslate="gesBtpApp.affectation.home.createLabel">
+            Create new Affectation
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+        <div class="col-sm-12">
+            <form name="searchForm" class="form-inline">
+                <div class="input-group w-100 mt-3">
+                    <input type="text" class="form-control" [(ngModel)]="currentSearch" id="currentSearch" name="currentSearch" placeholder="{{ 'gesBtpApp.affectation.home.search' | translate }}">
+                    <button class="input-group-append btn btn-info" (click)="search(currentSearch)">
+                        <span class="fa fa-search"></span>
+                    </button>
+                    <button class="input-group-append btn btn-danger" (click)="clear()" *ngIf="currentSearch">
+                        <span class="fa fa-trash-o"></span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="affectations">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="dateDebut"><span jhiTranslate="gesBtpApp.affectation.dateDebut">Date Debut</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="dateFin"><span jhiTranslate="gesBtpApp.affectation.dateFin">Date Fin</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="etat"><span jhiTranslate="gesBtpApp.affectation.etat">Etat</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="travauxNomTrav"><span jhiTranslate="gesBtpApp.affectation.travaux">Travaux</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="chantierNomChantier"><span jhiTranslate="gesBtpApp.affectation.chantier">Chantier</span> <span class="fa fa-sort"></span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let affectation of affectations ;trackBy: trackId">
+                <td><a [routerLink]="['../affectation', affectation.id ]">{{affectation.id}}</a></td>
+                <td>{{affectation.dateDebut | date:'mediumDate'}}</td>
+                <td>{{affectation.dateFin | date:'mediumDate'}}</td>
+                <td jhiTranslate="{{'gesBtpApp.EtatAffectation.' + affectation.etat}}">{{affectation.etat}}</td>
+                <td>
+                    <div *ngIf="affectation.travauxId">
+                        <a [routerLink]="['../travaux', affectation.travauxId  ]" >{{affectation.travauxNomTrav}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="affectation.chantierId">
+                        <a [routerLink]="['../chantier', affectation.chantierId  ]" >{{affectation.chantierNomChantier}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../affectation', affectation.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'affectation/'+ affectation.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'affectation/'+ affectation.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="affectations && affectations.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

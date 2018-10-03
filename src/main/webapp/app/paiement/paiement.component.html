@@ -1,0 +1,115 @@
+<div class="container">
+    <hr>
+    <div class="row">
+        <div class="col-md-6" [ngSwitch]="typePaiement">
+            <div *ngSwitchCase="'simple'">
+                <div class="card border-secondary">
+                    <div class="card-header text-white">
+                        <h3>Plus sur le Ges Simple Pack</h3>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Ges Simple max 10 employés</h5>
+                        <hr>
+                        <p class="card-text">Description Pack Ges Simple</p>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+            <div *ngSwitchCase="'pro'">
+                <div class="card border-secondary">
+                    <div class="card-header text-white">
+                        <h3>Plus sur le Ges Pro Pack</h3>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Ges Pro max 10 employés</h5>
+                        <p class="card-text">Description Pack Ges Pro</p>
+                    </div>
+                </div>
+            </div>
+            <div *ngSwitchCase="'premium'">
+                <div class="card border-secondary">
+                    <div class="card-header text-white">
+                        <h3>Plus sur le Ges Premium Pack</h3>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Ges Premium Plus de 10 employés</h5>
+                        <p class="card-text">Description Pack Ges Premium</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card border-secondary">
+                <div class="card-header text-white">
+                    <h3>Renseignez les informations de votre entreprise</h3>
+                </div>
+                <div class="card-body">
+                    <form #idFormRegister="ngForm" (ngSubmit)="register(idFormRegister.value)">
+                            <!-- <div *ngIf="passer">
+                            <h5 style="text-align: center">Informations de l'entreprise</h5>
+                            <hr> -->
+                        <div class="form-group">
+                            <label for="nomEntreprise">Nom de l'Entreprise</label>
+                            <input type="text" class="form-control" name="name" [(ngModel)]="name" id="nomEntreprise" placeholder="Nom Entreprise" required
+                                pattern="[a-zA-Z][a-zA-Z ]+">
+                        </div>
+                        <div class="form-group">
+                            <label for="nomCommercial">Nom Commercial</label>
+                            <input type="text" class="form-control" name="commercialName" [(ngModel)]="commercialName" id="nomCommercial" placeholder="Nom Commercial"
+                                required pattern="[a-zA-Z][a-zA-Z ]+">
+                        </div>
+                        <div class="form-group">
+                            <label for="numeroSiren">Numéro SIREN</label>
+                            <input type="text" class="form-control" name="sirenNumber" [(ngModel)]="sirenNumber" id="numeroSiren" placeholder="Numéro SIREN"
+                                required pattern="^[_'.@A-Za-z0-9-]*$">
+                        </div>
+                        <div class="form-group">
+                            <label for="tel">Téléphone</label>
+                            <input type="text" class="form-control" name="telephone" [(ngModel)]="telephone" id="tel" placeholder="Téléphone">
+                        </div>
+                        <div class="form-group">
+                                <label for="email">Email administrateur de l'entreprise</label>
+                                <input type="text" class="form-control" name="entrepriseAdminEmail" [(ngModel)]="entrepriseAdminEmail" id="email" placeholder="Email administrateur"
+                                    required pattern="^\w+([\.-]?\w+)*@\w+([\-]?\w+)*(\.\w{2,3})+$">
+                            </div>
+                        <!-- <hr>
+                        <div class="form-group">
+                                <button type="button" class="btn btn-primary" (click)="suivant(idFormRegister.value)">suivant</button>
+                            </div> -->
+                    <!-- </div> -->
+                        <!-- <div *ngIf="!passer" >
+                        <h5 style="text-align: center">Informations Admin Compte</h5>
+                        <hr>
+                        <div class="form-group">
+                            <label for="email">Email administrateur de l'entreprise</label>
+                            <input type="text" class="form-control" name="entrepriseAdminEmail" [(ngModel)]="entrepriseAdminEmail" id="email" placeholder="Email administrateur"
+                                required pattern="^\w+([\.-]?\w+)*@\w+([\-]?\w+)*(\.\w{2,3})+$">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Mot de passe Admin compte</label>
+                            <input type="password" class="form-control" name="password" [(ngModel)]="password" id="password" placeholder="Mot de passe"
+                                required >
+                        </div>
+                        <div class="form-group">
+                            <label for="password">confirmer Mot de passe Admin compte</label>
+                            <input type="password" class="form-control" name="confirmPassword" [(ngModel)]="confirmPassword" id="confirmPassword" placeholder="confirmer Mot de passe"
+                                required >
+                        </div>
+                        <hr>
+                        <div class="form-group">
+                                <button type="button" class="btn btn-primary" (click)="precedant()" >precedant</button>
+                            </div> -->
+                        <hr>
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-outline btn-block" [disabled]="!idFormRegister.valid" value="Passer au paiement {{typePaiement}}"
+                            />
+                        </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+</div>
+    

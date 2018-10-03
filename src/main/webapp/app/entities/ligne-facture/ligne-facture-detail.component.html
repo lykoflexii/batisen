@@ -1,0 +1,44 @@
+
+<div *ngIf="ligneFacture">
+    <h2><span jhiTranslate="gesBtpApp.ligneFacture.detail.title">Ligne Facture</span> {{ligneFacture.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="gesBtpApp.ligneFacture.designation">Designation</span></dt>
+        <dd>
+            <span>{{ligneFacture.designation}}</span>
+        </dd>
+        <dt><span jhiTranslate="gesBtpApp.ligneFacture.prixUnitaire">Prix Unitaire</span></dt>
+        <dd>
+            <span>{{ligneFacture.prixUnitaire}}</span>
+        </dd>
+        <dt><span jhiTranslate="gesBtpApp.ligneFacture.quantite">Quantite</span></dt>
+        <dd>
+            <span>{{ligneFacture.quantite}}</span>
+        </dd>
+        <dt><span jhiTranslate="gesBtpApp.ligneFacture.quantiteRetenue">Quantite Retenue</span></dt>
+        <dd>
+            <span>{{ligneFacture.quantiteRetenue}}</span>
+        </dd>
+        <dt><span jhiTranslate="gesBtpApp.ligneFacture.facture">Facture</span></dt>
+        <dd>
+            <div *ngIf="ligneFacture.factureId">
+                <a [routerLink]="['/facture', ligneFacture.factureId]">{{ligneFacture.factureId}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'ligne-facture/'+ ligneFacture.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

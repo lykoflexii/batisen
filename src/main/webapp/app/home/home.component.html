@@ -1,0 +1,488 @@
+
+<div [ngSwitch]="isAuthenticated()">
+  <div id="page-top" *ngSwitchCase="false">
+        
+            <!-- Header -->
+            <header class="masthead d-flex">
+              <div class="container text-center my-auto">
+                <h1 class="mb-1">BatiSen</h1>
+                <h3 class="mb-5">
+                  <em>BatiSen pour les PME du bâtiment au Sénégal</em>
+                </h3>
+                <div class="btn-group btn-group-justified">
+                  <a href="#pack" class="btn btn-primary">Inscription</a>
+                  <a  class="btn btn-primary" (click)="login()"> Connexion</a>
+                </div>
+              </div>
+              <div class="overlay">
+                  <!-- <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Find Out More</a> -->
+              </div>
+            </header>
+        
+            <!-- About -->
+            <section class="content-section bg-light" id="about">
+              <div class="container text-center">
+                <div class="row">
+                  <div class="col-lg-10 mx-auto">
+                    <h2>Que faisons nous?</h2>
+                    <p class="lead mb-5">Logiciel BatiSen pour les PME du bâtiment au Sénégal. Complet, intuitif et performant, notre logiciel de gestion
+                                BTP vous accompagne dans l’ensemble de vos missions quotidiennes : du devis à la facturation, en passant
+                                par la gestion de vos ressources et le contrôle du suivi de vos chantiers.
+                      </p>
+                    <a class="btn btn-dark btn-xl js-scroll-trigger" href="#pack">Nos Packs</a>
+                  </div>
+                </div>
+              </div>
+            </section>
+        
+            <!-- Services -->
+            <section class="content-section bg-primary text-white text-center" id="services">
+              <div class="container">
+                <div class="content-section-heading">
+                  <h3 class="text-secondary mb-0">Services</h3>
+                  <h2 class="mb-5">What We Offer</h2>
+                </div>
+                <div class="row">
+                  <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+                    <span class="service-icon rounded-circle mx-auto mb-3">
+                      <i class="icon-screen-smartphone"></i>
+                    </span>
+                    <h4>
+                      <strong>Efficacité</strong>
+                    </h4>
+                    <p class="text-faded mb-0">Vous créez vos factures et les envoyez à 
+                        vos clients en quelques clics. Les paiements sont détectés sur
+                          votre compte bancaire et synchronisés.</p>
+                  </div>
+                  <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+                    <span class="service-icon rounded-circle mx-auto mb-3">
+                      <i class="icon-pencil"></i>
+                    </span>
+                    <h4>
+                      <strong>Mobilité</strong>
+                    </h4>
+                    <p class="text-faded mb-0">Vous effectuez vos opérations bancaires au bureau, vous créez vos factures lors de vos déplacements et
+                        vous suivez votre trésorerie de chez vous. Compatible avec PC, Mac, iOS et Android.</p>
+                  </div>
+                  <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
+                    <span class="service-icon rounded-circle mx-auto mb-3">
+                      <i class="icon-like"></i>
+                    </span>
+                    <h4>
+                      <strong>Automatisation</strong>
+                    </h4>
+                    <p class="text-faded mb-0">Vos déclarations de TVA sont remplies automatiquement.
+                       Vous enregistrez d’un clic vos entrées et vos sorties de stock.
+                      <i class="fa fa-heart"></i>
+                      Start Bootstrap!</p>
+                  </div>
+                  <div class="col-lg-3 col-md-6">
+                    <span class="service-icon rounded-circle mx-auto mb-3">
+                      <i class="icon-mustache"></i>
+                    </span>
+                    <h4>
+                      <strong>Question</strong>
+                    </h4>
+                    <p class="text-faded mb-0">I mustache you a question...</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+        
+            <!-- Callout -->
+            <!-- <section class="callout">
+              <div class="container text-center">
+                <h2 class="mx-auto mb-5">Welcome to
+                  <em>your</em>
+                  next website!</h2>
+                <a class="btn btn-primary btn-xl" href="https://startbootstrap.com/template-overviews/stylish-portfolio/">Download Now!</a>
+              </div>
+            </section> -->
+        
+            <!-- Portfolio -->
+            <section class="content-section" id="pack">
+              <div class="container">
+                <div class="content-section-heading text-center">
+                  <h3 class="text-secondary mb-0">BatiSen</h3>
+                  <h2 class="mb-5">Trouvez le pack le plus adapté à vos besoins</h2>
+                </div>
+                <div class="row no-gutters">
+                  <div class="col-lg-6">
+                    <a class="portfolio-item"  routerLink='/paiement' [queryParams]="{typepaiement: 'premium'}">
+                      <span class="caption">
+                        <span class="caption-content">
+                          <h1>Performance</h1>
+                          <p class="mb-0">Go Performance Plus de 10 employés</p>
+                        </span>
+                      </span>
+                      <img class="img-fluid" src="img/ouvrier1.jpg" alt="">
+                    </a>
+                  </div>
+                  <div class="col-lg-6">
+                    <a class="portfolio-item">
+                      <span class="caption">
+                        <span class="caption-content">
+                          <h2>Essai</h2>
+                          <p class="mb-0">Essai Gratuit pour 1 mois</p>
+                        </span>
+                      </span>
+                      <img class="img-fluid" src="img/portfolio-2.jpg" alt="">
+                    </a>
+                  </div>
+                  <div class="col-lg-6">
+                    <a class="portfolio-item" routerLink= '/paiement' [queryParams]="{typepaiement: 'pro'}">
+                      <span class="caption">
+                        <span class="caption-content">
+                          <h1>Starter</h1>
+                          <p class="mb-0">Go Starter jusqu'à 10 employésl</p>
+                        </span>
+                      </span>
+                      <img class="img-fluid" src="img/ouvrier2.jpg" alt="">
+                    </a>
+                  </div>
+                  <div class="col-lg-6">
+                    <a class="portfolio-item" routerLink = '/paiement' [queryParams]="{typepaiement: 'simple'}">
+                      <span class="caption">
+                        <span class="caption-content">
+                          <h1>Pack Perso </h1>
+                          <p class="mb-0">Go Perso Moins de 5 employés</p>
+                        </span>
+                      </span>
+                      <img class="img-fluid" src="img/portfolio-4.jpg" alt="">
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </section>
+        
+            <!-- Call to Action -->
+            <!-- <section class="content-section bg-primary text-white">
+              <div class="container text-center">
+                <h2 class="mb-4">The buttons below are impossible to resist...</h2>
+                <a href="#" class="btn btn-xl btn-light mr-4">Click Me!</a>
+                <a href="#" class="btn btn-xl btn-dark">Look at Me!</a>
+              </div>
+            </section> -->
+        
+            <!-- Map -->
+            <section id="contact" class="map">
+              <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe>
+              <br/>
+              <small>
+                <a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A"></a>
+              </small>
+            </section>
+        
+    </div>
+
+ <!-- page d'accueil apres connection-->
+ <br/>
+  <br/>
+  <br/>
+<div class="row content" *ngSwitchCase="true">
+  <br/>
+  <br/>
+  <br/>
+    <div class="col-sm-3 sidenav">
+        <div class="card">
+            <div class="card-header"  style="background-color:#041470; color:hsl(231, 64%, 98%);text-align: center" >
+              <h1> Palette </h1>
+              </div>
+            <div class="card-body example-card">
+                <mat-grid-list cols="2" rowHeight="3:2">
+                    <mat-grid-tile>
+                      <a  data-toggle="tooltip" routerLink="client" data-placement="bottom" title="Inscription!">
+                            <span>
+                              Clients
+                              <br/>
+                                <i class="fa fa-fw fa-user fa-5x " aria-hidden="true"  style="color:#041470;"></i>
+                            </span>
+                        </a>
+                    </mat-grid-tile>
+                    <mat-grid-tile>
+                        <a  *jhiHasAnyAuthority="'ROLE_ADMIN'" data-toggle="tooltip" routerLink="chantier" data-placement="bottom" title="Inscription!">
+                            <span>
+                                <span >
+                                  Chantiers
+                                  <br/>
+                                    <i class="fa fa-building fa-5x icons" aria-hidden="true"  style="color:#041470;"></i>	
+                                </span>
+                                <!-- inscription -->
+                            </span>
+                        </a>
+                        <a  *jhiHasAnyAuthority="'ROLE_CHEF_CHANTIER'" data-toggle="tooltip" routerLink="chantiers" data-placement="bottom" title="Inscription!">
+                          <span>
+                              <span >
+                                Chantiers
+                                <br/>
+                                  <i class="fa fa-building fa-5x icons" aria-hidden="true"  style="color:#041470;"></i>	
+                              </span>
+                              <!-- inscription -->
+                          </span>
+                      </a>
+                    </mat-grid-tile>
+                    <mat-grid-tile>
+                        <a  data-toggle="tooltip" routerLink="devis" data-placement="bottom" title="Inscription!">
+                            <span >
+                              Devis
+                              <br/>
+                                <i class="fa fa-file-text fa-5x icons" aria-hidden="true"  style="color:#041470;"></i>	
+                            </span>
+                        </a>
+                    </mat-grid-tile>
+                    <mat-grid-tile>
+                        <a  data-toggle="tooltip"  routerLink="employe" data-placement="bottom" title="Inscription!">
+                            <span >
+                             Ressources
+                              <br/>
+                              <i class="fa fa-group fa-5x icons" aria-hidden="true"  style="color:#041470;"></i>	
+                            </span>
+                        </a>
+                    </mat-grid-tile>
+                    <mat-grid-tile>
+                      <a data-toggle="tooltip" routerLink="facture" data-placement="bottom" title="Liste facture">
+                          <span >
+                            Factures
+                            <br/>
+                              <i class="fa fa-money fa-5x icons" aria-hidden="true"  style="color:#041470;"></i>	
+                          </span>
+                      </a>
+                    </mat-grid-tile>
+                    <mat-grid-tile>
+                        <a  data-toggle="tooltip" routerLink="dashboard" data-placement="bottom" title="Inscription!">
+                            <span >
+                              Dashboard
+                              <br/>
+                                <i class="fa fa-bar-chart fa-5x icons" aria-hidden="true"  style="color:#041470;"></i>	
+                            </span>
+                        </a>
+                    </mat-grid-tile>
+                  </mat-grid-list>
+            </div> 
+            
+          </div>
+       
+      <br/><br/><br/><br/><br/>
+      <br/><br/><br/><br/><br/>
+      
+    </div>
+
+    <div class="col-sm-9">
+      <!-- <h4><small>RECENT POSTS</small></h4> -->
+      <hr>
+        <div class="row">
+            <div class="container col-sm-6 col-md-6">
+                          <mat-accordion>
+                                <mat-expansion-panel>
+                                  <mat-expansion-panel-header style=" background-color: #041470">
+                                    <mat-panel-title>
+                                            <h4 style="color: white; text-align: center">  TOP 5 CLIENT </h4>
+                                    </mat-panel-title>
+                                    <mat-panel-description>
+                                    </mat-panel-description>
+                                  </mat-expansion-panel-header>
+                                  <mat-form-field>
+                                    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Recherche">
+                                  </mat-form-field>
+                                  <!-- <button mat-fab style="float:right;background-color:green" 
+                                  matTooltip="Ajouter chantier"
+                                  [routerLink]="['/', { outlets: { popup: ['employe-new'] } }]">
+                                     <mat-icon >add</mat-icon></button> -->
+                                  <div class="mat-elevation-z8">
+                                    <mat-table #table [dataSource]="dataSource" matSort>
+                                  
+                                      <!-- ID Column -->
+                                      <ng-container matColumnDef="nomClient">
+                                        <mat-header-cell *matHeaderCellDef mat-sort-header> Nom </mat-header-cell>
+                                        <mat-cell *matCellDef="let row"> {{row.nomClient}} </mat-cell>
+                                      </ng-container> 
+                                  
+                                      <!-- nomTrav Column -->
+                                      <ng-container matColumnDef="villeClient">
+                                        <mat-header-cell *matHeaderCellDef mat-sort-header> Ville </mat-header-cell>
+                                        <mat-cell *matCellDef="let row"> {{row.villeClient }} </mat-cell>
+                                      </ng-container>
+                                
+                                       <!-- nomTrav Column -->
+                                       <ng-container matColumnDef="adresseClient">
+                                         <mat-header-cell *matHeaderCellDef mat-sort-header> Adresse</mat-header-cell>
+                                         <mat-cell *matCellDef="let row"> {{row.adresseClient}} </mat-cell>
+                                       </ng-container>
+                              
+                                  
+                                      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                                      <mat-row *matRowDef="let row; columns: displayedColumns;">
+                                      </mat-row>
+                                    </mat-table>
+                                  
+                                    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+                                  </div>   
+                                </mat-expansion-panel>
+                                <mat-expansion-panel (opened)="panelOpenState = false"
+                                                     (closed)="panelOpenState = true" >
+                                  <!-- <mat-expansion-panel-header style=" background-color: #7A1EA1;">
+                                    <mat-panel-title>
+                                        <h4 style="color: white; text-align: center"> Afficher  Dashboard </h4>
+                                    </mat-panel-title>
+                                    <mat-panel-description>
+                                      
+                                    </mat-panel-description>
+                                  </mat-expansion-panel-header>
+                                  <h1> RIEN </h1> -->
+                                </mat-expansion-panel>
+                              </mat-accordion>
+                </div>
+                <div class="container col-sm-6 col-md-6">
+                  <mat-accordion>
+                        <mat-expansion-panel >
+                          <mat-expansion-panel-header style=" background-color: #041470">
+                            <mat-panel-title>
+                                    <h4 style="color: white; text-align: center">  5 DERNIERS DEVIS </h4>
+                            </mat-panel-title>
+                            <mat-panel-description>
+                            </mat-panel-description>
+                          </mat-expansion-panel-header>
+                          <!-- <mat-form-field>
+                            <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Recherche">
+                          </mat-form-field> -->
+                          <hr>
+                          <div class="mat-elevation-z8">
+                            <mat-table #table [dataSource]="dataSource2" matSort>
+              
+                              <!-- ID Column -->
+                              <ng-container matColumnDef="titre">
+                                <mat-header-cell *matHeaderCellDef mat-sort-header>Titre </mat-header-cell>
+                                <mat-cell *matCellDef="let row"> {{row.titre}} </mat-cell>
+                              </ng-container> 
+                          
+                              <!-- nomTrav Column -->
+                              <ng-container matColumnDef="dateDeCreation">
+                                <mat-header-cell *matHeaderCellDef mat-sort-header> Date De Creation </mat-header-cell>
+                                <mat-cell *matCellDef="let row"> {{row.dateDeCreation | date:'mediumDate'}} </mat-cell>
+                              </ng-container>
+                        
+                               <!-- nomTrav Column -->
+                               <ng-container matColumnDef="validite">
+                                 <mat-header-cell *matHeaderCellDef mat-sort-header> Validite </mat-header-cell>
+                                 <mat-cell *matCellDef="let row"> {{row.validite | date:'mediumDate'}} </mat-cell>
+                               </ng-container>
+
+                          
+                              <mat-header-row *matHeaderRowDef="displayedColumns2"></mat-header-row>
+                              <mat-row *matRowDef="let row; columns: displayedColumns2;">
+                              </mat-row>
+                            </mat-table>
+                          
+                            <!-- <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator> -->
+                          </div>   
+                        </mat-expansion-panel>
+                        <mat-expansion-panel  >
+                          <!-- <mat-expansion-panel-header style=" background-color: #7A1EA1;">
+                            <mat-panel-title>
+                                <h4 style="color: white; text-align: center"> Afficher  Dashboard </h4>
+                            </mat-panel-title>
+                            <mat-panel-description>
+                              
+                            </mat-panel-description>
+                          </mat-expansion-panel-header>
+                          <h1> RIEN </h1> -->
+                        </mat-expansion-panel>
+                      </mat-accordion>
+        </div>
+              </div>
+            
+                <br><br>
+      
+      <!-- <h4><small>RECENT POSTS</small></h4> -->
+      <hr>
+      <div class="container col-sm-12 col-md-12">
+        <mat-accordion>
+              <mat-expansion-panel  [expanded]="true">
+                <mat-expansion-panel-header style=" background-color: #041470">
+                  <mat-panel-title>
+                          <h4 style="color: white; text-align: center"> CHIFFRE D'AFFAIRES </h4>
+                  </mat-panel-title>
+                  <mat-panel-description>
+                  </mat-panel-description>
+                </mat-expansion-panel-header>
+                <mat-form-field>
+                  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Recherche">
+                </mat-form-field>
+                <!-- <button mat-fab style="float:right;background-color:green" 
+                matTooltip="Ajouter chantier"
+                [routerLink]="['/', { outlets: { popup: ['employe-new'] } }]">
+                   <mat-icon >add</mat-icon></button> -->
+                   <br><br><br><br>
+                <div class="mat-elevation-z8">
+                  <mat-table #table [dataSource]="dataSource" matSort>
+                
+                    <!-- ID Column -->
+                    <ng-container matColumnDef="nomClient">
+                      <mat-header-cell *matHeaderCellDef mat-sort-header> Nom </mat-header-cell>
+                      <mat-cell *matCellDef="let row"> {{row.nomClient}} </mat-cell>
+                    </ng-container> 
+                
+                    <!-- nomTrav Column -->
+                    <ng-container matColumnDef="villeClient">
+                      <mat-header-cell *matHeaderCellDef mat-sort-header> Ville </mat-header-cell>
+                      <mat-cell *matCellDef="let row"> {{row.villeClient }} </mat-cell>
+                    </ng-container>
+              
+                     <!-- nomTrav Column -->
+                     <ng-container matColumnDef="adresseClient">
+                       <mat-header-cell *matHeaderCellDef mat-sort-header> Adresse</mat-header-cell>
+                       <mat-cell *matCellDef="let row"> {{row.adresseClient}} </mat-cell>
+                     </ng-container>
+                
+                    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                    <mat-row *matRowDef="let row; columns: displayedColumns;">
+                    </mat-row>
+                  </mat-table>
+                
+                  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+                </div>   
+              </mat-expansion-panel>
+              <mat-expansion-panel (opened)="panelOpenState = false"
+                                   (closed)="panelOpenState = true" >
+                <!-- <mat-expansion-panel-header style=" background-color: #7A1EA1;">
+                  <mat-panel-title>
+                      <h4 style="color: white; text-align: center"> Afficher  Dashboard </h4>
+                  </mat-panel-title>
+                  <mat-panel-description>
+                    
+                  </mat-panel-description>
+                </mat-expansion-panel-header>
+                <h1> RIEN </h1> -->
+              </mat-expansion-panel>
+            </mat-accordion>
+</div>
+<hr>
+          </div>
+        </div>
+        <!-- Footer -->
+<footer class="footer text-center fixed-botom">
+  <div class="container-fluid">
+    <ul class="list-inline mb-5">
+      <li class="list-inline-item">
+        <a class="social-link rounded-circle text-white mr-3" >
+          <i class="icon-social-facebook"></i>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a class="social-link rounded-circle text-white mr-3" >
+          <i class="icon-social-twitter"></i>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a class="social-link rounded-circle text-white" >
+          <i class="icon-social-github"></i>
+        </a>
+      </li>
+    </ul>
+    <p class="text-muted small mb-0">Copyright &copy; Your Website 2017</p>
+  </div>
+</footer>
+</div>
+      </div>
+      
+

@@ -1,0 +1,26 @@
+
+{
+    "gesBtpApp": {
+        "travaux" : {
+            "home": {
+                "title": "Travauxes",
+                "createLabel": "Créer un nouveau Travaux",
+                "createOrEditLabel": "Créer ou éditer un Travaux",
+                "search": "Recherche pour Travaux"
+            },
+            "created": "Un nouveau Travaux a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Travaux avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Travaux avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Travaux {{ id }} ?"
+            },
+            "detail": {
+                "title": "Travaux"
+            },
+            "nomTrav": "Nom Trav",
+            "descriptionTrav": "Description Trav",
+            "affectation2": "Affectation 2",
+            "facture3": "Facture 3"
+        }
+    }
+}

@@ -1,0 +1,10 @@
+[
+    {
+        "name": "Multitenancy generator",
+        "npmPackageName": "generator-jhipster-multitenancy",
+        "description": "A JHipster module to generate Multitenancy",
+        "hookFor": "entity",
+        "hookType": "post",
+        "generatorCallback": "jhipster-multitenancy:entity"
+    }
+]

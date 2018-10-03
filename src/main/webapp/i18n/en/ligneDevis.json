@@ -1,0 +1,26 @@
+
+{
+    "gesBtpApp": {
+        "ligneDevis" : {
+            "home": {
+                "title": "Ligne Devis",
+                "createLabel": "Create a new Ligne Devis",
+                "createOrEditLabel": "Create or edit a Ligne Devis",
+                "search": "Search for Ligne Devis"
+            },
+            "created": "A new Ligne Devis is created with identifier {{ param }}",
+            "updated": "A Ligne Devis is updated with identifier {{ param }}",
+            "deleted": "A Ligne Devis is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Ligne Devis {{ id }}?"
+            },
+            "detail": {
+                "title": "Ligne Devis"
+            },
+            "designation": "Designation",
+            "prixUnitaire": "Prix Unitaire",
+            "quantite": "Quantite",
+            "devis": "Devis"
+        }
+    }
+}

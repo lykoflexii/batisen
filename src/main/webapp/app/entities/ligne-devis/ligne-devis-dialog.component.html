@@ -1,0 +1,73 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myLigneDevisLabel" jhiTranslate="gesBtpApp.ligneDevis.home.createOrEditLabel">Create or edit a Ligne Devis</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!ligneDevis.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="ligneDevis.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="gesBtpApp.ligneDevis.designation" for="field_designation">Designation</label>
+            <input type="text" class="form-control" name="designation" id="field_designation"
+                [(ngModel)]="ligneDevis.designation" required/>
+            <div [hidden]="!(editForm.controls.designation?.dirty && editForm.controls.designation?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.designation?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="gesBtpApp.ligneDevis.prixUnitaire" for="field_prixUnitaire">Prix Unitaire</label>
+            <input type="number" class="form-control" name="prixUnitaire" id="field_prixUnitaire"
+                [(ngModel)]="ligneDevis.prixUnitaire" required/>
+            <div [hidden]="!(editForm.controls.prixUnitaire?.dirty && editForm.controls.prixUnitaire?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.prixUnitaire?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.prixUnitaire?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="gesBtpApp.ligneDevis.quantite" for="field_quantite">Quantite</label>
+            <input type="number" class="form-control" name="quantite" id="field_quantite"
+                [(ngModel)]="ligneDevis.quantite" required/>
+            <div [hidden]="!(editForm.controls.quantite?.dirty && editForm.controls.quantite?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.quantite?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.quantite?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="gesBtpApp.ligneDevis.devis" for="field_devis">Devis</label>
+            <select class="form-control" id="field_devis" name="devis" [(ngModel)]="ligneDevis.devisId" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="devisOption.id" *ngFor="let devisOption of devis; trackBy: trackDevisById">{{devisOption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

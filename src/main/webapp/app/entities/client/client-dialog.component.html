@@ -1,0 +1,121 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myClientLabel" jhiTranslate="gesBtpApp.client.home.createOrEditLabel">Create or edit a Client</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!client.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="client.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="gesBtpApp.client.nomClient" for="field_nomClient">Nom Client</label>
+            <input type="text" class="form-control" name="nomClient" id="field_nomClient"
+                [(ngModel)]="client.nomClient" required maxlength="50"/>
+            <div [hidden]="!(editForm.controls.nomClient?.dirty && editForm.controls.nomClient?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.nomClient?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.nomClient?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                   This field cannot be longer than 50 characters.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="gesBtpApp.client.villeClient" for="field_villeClient">Ville Client</label>
+            <input type="text" class="form-control" name="villeClient" id="field_villeClient"
+                [(ngModel)]="client.villeClient" required maxlength="50"/>
+            <div [hidden]="!(editForm.controls.villeClient?.dirty && editForm.controls.villeClient?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.villeClient?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.villeClient?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                   This field cannot be longer than 50 characters.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="gesBtpApp.client.adresseClient" for="field_adresseClient">Adresse Client</label>
+            <input type="text" class="form-control" name="adresseClient" id="field_adresseClient"
+                [(ngModel)]="client.adresseClient" required maxlength="100"/>
+            <div [hidden]="!(editForm.controls.adresseClient?.dirty && editForm.controls.adresseClient?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.adresseClient?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.adresseClient?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 100 }">
+                   This field cannot be longer than 100 characters.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="gesBtpApp.client.telephoneClient" for="field_telephoneClient">Telephone Client</label>
+            <input type="text" class="form-control" name="telephoneClient" id="field_telephoneClient"
+                [(ngModel)]="client.telephoneClient" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="gesBtpApp.client.fax" for="field_fax">Fax</label>
+            <input type="text" class="form-control" name="fax" id="field_fax"
+                [(ngModel)]="client.fax" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="gesBtpApp.client.emailClient" for="field_emailClient">Email Client</label>
+            <input type="text" class="form-control" name="emailClient" id="field_emailClient"
+                [(ngModel)]="client.emailClient" required pattern="^\w+([\.-]?\w+)*@\w+([\-]?\w+)*(\.\w{2,3})+$"/>
+            <div [hidden]="!(editForm.controls.emailClient?.dirty && editForm.controls.emailClient?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.emailClient?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="gesBtpApp.client.typeClient" for="field_typeClient">Type Client</label>
+            <select class="form-control" name="typeClient" [(ngModel)]="client.typeClient" id="field_typeClient"  required>
+                <option value="PARTICULIER">{{'gesBtpApp.Type.PARTICULIER' | translate}}</option>
+                <option value="PROFESSIONNEL">{{'gesBtpApp.Type.PROFESSIONNEL' | translate}}</option>
+            </select>
+            <div [hidden]="!(editForm.controls.typeClient?.dirty && editForm.controls.typeClient?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.typeClient?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="gesBtpApp.client.prenomClient" for="field_prenomClient">Prenom Client</label>
+            <input type="text" class="form-control" name="prenomClient" id="field_prenomClient"
+                [(ngModel)]="client.prenomClient" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="gesBtpApp.client.nomCommercial" for="field_nomCommercial">Nom Commercial</label>
+            <input type="text" class="form-control" name="nomCommercial" id="field_nomCommercial"
+                [(ngModel)]="client.nomCommercial" />
+        </div>
+<!-- 
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="gesBtpApp.client.entreprise" for="field_entreprise">Entreprise</label>
+            <select class="form-control" id="field_entreprise" name="entreprise" [(ngModel)]="client.entrepriseId" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="entrepriseOption.id" *ngFor="let entrepriseOption of entreprises; trackBy: trackEntrepriseById">{{entrepriseOption.name}}</option>
+            </select>
+        </div> -->
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

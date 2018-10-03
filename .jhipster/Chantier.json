@@ -1,0 +1,97 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "client",
+            "otherEntityName": "client",
+            "otherEntityField": "nomClient"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "affectation3",
+            "otherEntityName": "affectation",
+            "otherEntityRelationshipName": "chantier"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "chantier",
+            "otherEntityName": "devis",
+            "otherEntityRelationshipName": "chantier"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "facture2",
+            "otherEntityName": "facture",
+            "otherEntityRelationshipName": "chantier"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "nomChantier",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 50
+        },
+        {
+            "fieldName": "descriptionChantier",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 200
+        },
+        {
+            "fieldName": "ville",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "adresse",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 100
+        },
+        {
+            "fieldName": "etatChantier",
+            "fieldType": "EtatChantier",
+            "fieldValues": "EN_COURS,EN_RETARD,TERMINER"
+        },
+        {
+            "fieldName": "dateDebutReelle",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "dateFinReelle",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "dateDebutPrevu",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "dateFinPrevu",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20180509145535",
+    "entityTableName": "chantier",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false
+}

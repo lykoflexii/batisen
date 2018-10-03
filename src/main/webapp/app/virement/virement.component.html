@@ -1,0 +1,66 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div id="pay-invoice" class="card">
+        <div class="card-body payBorder">
+          <div class="card-title">
+            <h3 class="text-center couleurTitre">Payement Ges <b>{{typeVirement | capitalize}}</b> Pack</h3>
+          </div>
+          <hr>
+          <form role="form" novalidate="novalidate" class="needs-validation">
+            <div class="form-group text-center">
+              <ul class="list-inline">
+                <li class="list-inline-item">
+                  <i class="fa fa-cc-visa fa-2x"></i>
+                </li>
+                <li class="list-inline-item">
+                  <i class="fa fa-cc-mastercard fa-2x"></i>
+                </li>
+                <li class="list-inline-item">
+                  <i class="fa fa-cc-paypal fa-2x"></i>
+                </li>
+              </ul>
+            </div>
+            <div class="form-group has-success">
+              <label for="cc-name" class="control-label mb-1">Nom sur la carte</label>
+              <input id="cc-name" name="cc-name" type="text" class="form-control cc-name" required autocomplete="cc-name" aria-required="true"
+                aria-invalid="false" aria-describedby="cc-name-error">
+              <span class="invalid-feedback">Entrez le nom figurant sur la carte</span>
+            </div>
+            <div class="form-group">
+              <label for="cc-number" class="control-label mb-1">Numéro de la carte</label>
+              <input id="cc-number" name="cc-number" type="tel" class="form-control cc-number identified visa" required="" pattern="[0-9]{16}">
+              <span class="invalid-feedback">Entrez un nombre de 16 chiffres valide</span>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                <div class="form-group">
+                  <label for="cc-exp" class="control-label mb-1">Date d'expiration</label>
+                  <input id="cc-exp" name="cc-exp" type="tel" class="form-control cc-exp" required placeholder="MM / YY" autocomplete="cc-exp">
+                  <span class="invalid-feedback">Entrez la date d'expiration</span>
+                </div>
+              </div>
+              <div class="col-6">
+                <label for="x_card_code" class="control-label mb-1">Code de sécurité</label>
+                <div class="input-group">
+                  <input id="x_card_code" name="x_card_code" type="tel" class="form-control cc-cvc" required autocomplete="off">
+                  <span class="invalid-feedback order-last">Entrez le code de 3 chiffres de votre carte</span>
+                  <div class="input-group-append">
+                    <div class="input-group-text">
+                      <span class="fa fa-question-circle fa-lg" data-toggle="popover" data-container="body" data-html="true" data-title="Security Code"
+                        data-content="<div class='text-center one-card'>The 3 digit code on back of the card..<div class='visa-mc-cvc-preview'></div></div>"
+                        data-trigger="hover"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <a class="btn btn-outline btn-block" (click)="payement()" routerLink='/' role="button">
+              <i class="fa fa-lock fa-lg"></i>&nbsp; Payer
+            </a>
+          </form>
+        </div>
+      </div>
+</div>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+
+{
+    "gesBtpApp": {
+        "devis" : {
+            "home": {
+                "title": "Devis",
+                "createLabel": "Créer un nouveau Devis",
+                "createOrEditLabel": "Créer ou éditer un Devis",
+                "search": "Recherche pour Devis"
+            },
+            "created": "Un nouveau Devis a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Devis avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Devis avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Devis {{ id }} ?"
+            },
+            "detail": {
+                "title": "Devis"
+            },
+            "titre": "Titre",
+            "dateDeCreation": "Date De Creation",
+            "validite": "Validite",
+            "tva": "Tva",
+            "coutMainDoeuvre": "Cout Main Doeuvre",
+            "client": "Client",
+            "chantier": "Chantier",
+            "devis": "Devis"
+        }
+    }
+}

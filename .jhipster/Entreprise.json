@@ -1,0 +1,67 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "client",
+            "otherEntityName": "client",
+            "otherEntityRelationshipName": "entreprise"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "employe",
+            "otherEntityName": "employe",
+            "otherEntityRelationshipName": "entreprise"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "facture4",
+            "otherEntityName": "facture",
+            "otherEntityRelationshipName": "entreprise"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "commercialName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "sirenNumber",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "entrepriseAdminEmail",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "telephone",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "pack",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20180606123755",
+    "entityTableName": "entreprise",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false
+}

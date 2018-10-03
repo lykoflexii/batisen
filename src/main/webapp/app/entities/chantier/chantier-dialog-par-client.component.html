@@ -1,0 +1,151 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myChantierLabel" jhiTranslate="gesBtpApp.chantier.home.createOrEditLabel">Create or edit a Chantier</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!chantier.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="chantier.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="gesBtpApp.chantier.nomChantier" for="field_nomChantier">Nom Chantier</label>
+            <input type="text" class="form-control" name="nomChantier" id="field_nomChantier"
+                [(ngModel)]="chantier.nomChantier" required maxlength="50"/>
+            <div [hidden]="!(editForm.controls.nomChantier?.dirty && editForm.controls.nomChantier?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.nomChantier?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.nomChantier?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                   This field cannot be longer than 50 characters.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="gesBtpApp.chantier.descriptionChantier" for="field_descriptionChantier">Description Chantier</label>
+            <input type="text" class="form-control" name="descriptionChantier" id="field_descriptionChantier"
+                [(ngModel)]="chantier.descriptionChantier" maxlength="200"/>
+            <div [hidden]="!(editForm.controls.descriptionChantier?.dirty && editForm.controls.descriptionChantier?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.descriptionChantier?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 200 }">
+                   This field cannot be longer than 200 characters.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="gesBtpApp.chantier.ville" for="field_ville">Ville</label>
+            <input type="text" class="form-control" name="ville" id="field_ville"
+                [(ngModel)]="chantier.ville" required/>
+            <div [hidden]="!(editForm.controls.ville?.dirty && editForm.controls.ville?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.ville?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="gesBtpApp.chantier.adresse" for="field_adresse">Adresse</label>
+            <input type="text" class="form-control" name="adresse" id="field_adresse"
+                [(ngModel)]="chantier.adresse" required maxlength="100"/>
+            <div [hidden]="!(editForm.controls.adresse?.dirty && editForm.controls.adresse?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.adresse?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.adresse?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 100 }">
+                   This field cannot be longer than 100 characters.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="gesBtpApp.chantier.etatChantier" for="field_etatChantier">Etat Chantier</label>
+            <select class="form-control" name="etatChantier" [(ngModel)]="chantier.etatChantier" id="field_etatChantier" >
+                <option value="EN_COURS">{{'gesBtpApp.EtatChantier.EN_COURS' | translate}}</option>
+                <option value="EN_RETARD">{{'gesBtpApp.EtatChantier.EN_RETARD' | translate}}</option>
+                <option value="TERMINER">{{'gesBtpApp.EtatChantier.TERMINER' | translate}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="gesBtpApp.chantier.dateDebutReelle" for="field_dateDebutReelle">Date Debut Reelle</label>
+            <div class="input-group">
+                <input id="field_dateDebutReelle" type="text" class="form-control" name="dateDebutReelle" ngbDatepicker  #dateDebutReelleDp="ngbDatepicker" [(ngModel)]="chantier.dateDebutReelle"
+                />
+                <span class="input-group-append">
+                    <button type="button" class="btn btn-secondary" (click)="dateDebutReelleDp.toggle()"><i class="fa fa-calendar"></i></button>
+                </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="gesBtpApp.chantier.dateFinReelle" for="field_dateFinReelle">Date Fin Reelle</label>
+            <div class="input-group">
+                <input id="field_dateFinReelle" type="text" class="form-control" name="dateFinReelle" ngbDatepicker  #dateFinReelleDp="ngbDatepicker" [(ngModel)]="chantier.dateFinReelle"
+                />
+                <span class="input-group-append">
+                    <button type="button" class="btn btn-secondary" (click)="dateFinReelleDp.toggle()"><i class="fa fa-calendar"></i></button>
+                </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="gesBtpApp.chantier.dateDebutPrevu" for="field_dateDebutPrevu">Date Debut Prevu</label>
+            <div class="input-group">
+                <input id="field_dateDebutPrevu" type="text" class="form-control" name="dateDebutPrevu" ngbDatepicker  #dateDebutPrevuDp="ngbDatepicker" [(ngModel)]="chantier.dateDebutPrevu"
+                required/>
+                <span class="input-group-append">
+                    <button type="button" class="btn btn-secondary" (click)="dateDebutPrevuDp.toggle()"><i class="fa fa-calendar"></i></button>
+                </span>
+            </div>
+            <div [hidden]="!(editForm.controls.dateDebutPrevu?.dirty && editForm.controls.dateDebutPrevu?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.dateDebutPrevu?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="gesBtpApp.chantier.dateFinPrevu" for="field_dateFinPrevu">Date Fin Prevu</label>
+            <div class="input-group">
+                <input id="field_dateFinPrevu" type="text" class="form-control" name="dateFinPrevu" ngbDatepicker  #dateFinPrevuDp="ngbDatepicker" [(ngModel)]="chantier.dateFinPrevu"
+                required/>
+                <span class="input-group-append">
+                    <button type="button" class="btn btn-secondary" (click)="dateFinPrevuDp.toggle()"><i class="fa fa-calendar"></i></button>
+                </span>
+            </div>
+            <div [hidden]="!(editForm.controls.dateFinPrevu?.dirty && editForm.controls.dateFinPrevu?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.dateFinPrevu?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+
+        <!-- <div class="form-group">
+            <label class="form-control-label" jhiTranslate="gesBtpApp.chantier.client" for="field_client">Client</label>
+            <select class="form-control" id="field_client" name="client" [(ngModel)]="chantier.clientId" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="clientOption.id" *ngFor="let clientOption of clients; trackBy: trackClientById">{{clientOption.nomClient}}</option>
+            </select>
+        </div> -->
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="gesBtpApp.chantier.user" for="field_user">User</label>
+            <select class="form-control" id="field_user" name="user" [(ngModel)]="chantier.userId" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="userOption.id" *ngFor="let userOption of users; trackBy: trackUserById">{{userOption.login}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

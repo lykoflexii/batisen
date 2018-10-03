@@ -1,0 +1,297 @@
+
+<br/><br/>
+<!-- <div class="row container-fluid">
+        <div class="col-sm-3 sidenav">
+                <br/>
+                <br/>
+                <div class="card">
+                        <div class="card-header"  style="background-color:#041470; color:hsl(231, 64%, 98%);text-align: center" >
+                                <h1> Palette </h1>
+                                </div>
+                        <div class="card-body">
+                            <mat-grid-list cols="2" rowHeight="3:2">
+                                <mat-grid-tile>
+                                  <a  data-toggle="tooltip" routerLink="../client" data-placement="bottom" title="Inscription!" >
+                                        <span>
+                                          Clients
+                                          <br/>
+                                            <i class="fa fa-fw fa-user fa-4x " aria-hidden="true" style="color:#041470;"></i>
+                                        </span>
+                                    </a>
+                                </mat-grid-tile>
+                                <mat-grid-tile>
+                                    <a  *jhiHasAnyAuthority="'ROLE_MANAGER'" data-toggle="tooltip" routerLink="../chantier" 
+                                    data-placement="bottom" title="Inscription!">
+                                        <span>
+                                            <span >
+                                              Chantiers
+                                              <br/>
+                                                <i class="fa fa-building fa-4x icons" aria-hidden="true"  style="color:#041470;"></i>	
+                                            </span>
+                                            
+                                        </span>
+                                    </a>
+                                    <a  *jhiHasAnyAuthority="'ROLE_CHEF_CHANTIER'" data-toggle="tooltip" routerLink="../chantiers" 
+                                    data-placement="bottom" title="Inscription!">
+                                        <span>
+                                            <span >
+                                              Chantiers
+                                              <br/>
+                                                <i class="fa fa-building fa-4x icons" aria-hidden="true"  style="color:#041470;"></i>	
+                                            </span>
+                                            
+                                        </span>
+                                    </a>
+                                </mat-grid-tile>
+                                <mat-grid-tile>
+                                    <a  data-toggle="tooltip" routerLink="../devis" data-placement="bottom" title="Inscription!">
+                                        <span >
+                                          Devis
+                                          <br/>
+                                            <i class="fa fa-file-text fa-4x icons" aria-hidden="true"  style="color:#041470;"></i>	
+                                        </span>
+                                    </a>
+                                </mat-grid-tile>
+                                <mat-grid-tile>
+                                    <a  data-toggle="tooltip"  routerLink="../employe" data-placement="bottom" title="Inscription!">
+                                        <span >
+                                         Ressources
+                                          <br/>
+                                          <i class="fa fa-group fa-4x icons" aria-hidden="true"  style="color:#041470;"></i>	
+                                        </span>
+                                    </a>
+                                </mat-grid-tile>
+                                <mat-grid-tile>
+                                  <a data-toggle="tooltip" routerLink="../facture" data-placement="bottom" title="Inscription!">
+                                      <span >
+                                        Factures
+                                        <br/>
+                                          <i class="fa fa-money fa-4x icons" aria-hidden="true"  style="color:#041470;"></i>	
+                                      </span>
+                                  </a>
+                                </mat-grid-tile>
+                                <mat-grid-tile>
+                                    <a  data-toggle="tooltip" data-placement="bottom" title="Inscription!" style="color:#155d74;">
+                                        <span >
+                                          Dashboard
+                                          <br/>
+                                            <i class="fa fa-bar-chart fa-4x icons" aria-hidden="true"  style="color:#155d74;"></i>	
+                                        </span>
+                                    </a>
+                                </mat-grid-tile>
+                              </mat-grid-list>
+                        </div> 
+                  </div>
+                  </div>
+                 
+
+
+                <div class="content col-sm-9" style="height: 700px" >
+                  <br/>
+                  <br/>
+                  
+                    <div>
+                        <h6 style="font-weight: 700; text-align: center">DASHBOARD 1 </h6>
+                        {{data | json}}
+                        <hr>
+                        {{etat | json}}
+                        <hr>
+                        <mat-card class="example-card" style="max-width: 100%">
+                          <div class="row">
+                            <div class=" col-sm-4">
+                                <mat-form-field style="width: 100%" >
+                                    <mat-select placeholder="Type de graphe" [(value)]="selected" (change)="choixGraphe($event)">
+                                      <mat-option value="pie">Diagramme circulaire</mat-option>
+                                      <mat-option value="line">Diagramme en Ligne </mat-option>
+                                      <mat-option value="bar">Diagramme en Barre</mat-option>
+                                    </mat-select>
+                                    </mat-form-field>
+                            </div>
+                            <div class=" col-sm-4">
+                                <mat-form-field style="width: 100%" >
+                                    <mat-select placeholder="Choisir Client" [(value)]="selected3" (change)="activiteParClient($event)">
+                                      <mat-option [value]="0"></mat-option>
+                                      <mat-option *ngFor="let client of clients" [value]="client?.id">
+                                        {{client?.nomClient}}
+                                      </mat-option>
+                                      </mat-select>
+                                  </mat-form-field>
+                            </div>
+                            <div class=" col-sm-4" *ngIf="selected3 && selected3 !=0" >
+                                <mat-form-field style="width: 100%">
+                                    <mat-select placeholder="choisir Chantier" [(value)]="selected2"  (change)="activiteParChantier($event)">
+                                        <mat-option [value]="0"></mat-option>
+                                        <mat-option *ngFor="let chantier of chantiers" [value]="chantier?.id">
+                                          {{chantier?.nomChantier}}
+                                        </mat-option>
+                                    </mat-select>
+                                    
+                                  </mat-form-field>
+                            </div>
+                        </div>
+                        </mat-card>
+                 
+                </div>
+                <hr>
+                <div>
+                   
+                    <mat-card class="example-card" style="max-width: 100%">
+                      <mat-card-content>
+                          <div id="chartdiv" [style.width.%]="100" [style.height.px]="500"></div>
+                      </mat-card-content>
+                    
+                    </mat-card>
+             
+            </div>
+                </div> -->
+                {{dataCoutChantier | json}}
+                {{coutChantier | json}}
+                <div class="row">
+                  <div class="col-sm-12">
+                    <div class="row">
+                      <div class="col-sm-2"></div>
+                      <div class="col-sm-4">
+                          <mat-form-field style="width: 100%" >
+                              <mat-select placeholder="Choisir Client" [(value)]="selectedClient" (change)="choisirClient($event)">
+                                <mat-option [value]="0"></mat-option>
+                                <mat-option *ngFor="let client of clients" [value]="client?.id">
+                                  {{client?.nomClient}}
+                                </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                      </div>
+                      <div class="col-sm-4">
+                          <mat-form-field style="width: 100%">
+                              <mat-select placeholder="choisir Chantier" [(value)]="selectedChantier"  (change)="choisirChantier($event)">
+                                  <mat-option [value]="0"></mat-option>
+                                  <mat-option *ngFor="let chantier of chantiers" [value]="chantier?.id">
+                                    {{chantier?.nomChantier}}
+                                  </mat-option>
+                              </mat-select>
+                              
+                            </mat-form-field>
+                      </div>
+                      <div class="col-sm-2"></div>
+                    </div>
+                  </div>
+                  <div class="col-sm-12">
+                    <div class="row">
+                      <div class="col-sm-8">
+                        <div class="card">
+                          <div id="chartdiv2" [style.width.%]="100" [style.height.px]="350"></div>
+                        </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="card">
+                          <div id="chartdivMap" [style.width.%]="100" [style.height.px]="350"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-sm-12">
+                      <div class="row">
+                        <div class="col-sm-4">
+                          <div class="card">
+                            <br/><br/>
+                            <div id="chartdiv" [style.width.%]="100" [style.height.px]="350"></div>
+                          </div>
+                        </div>
+                        <div class="col-sm-4">
+                          <div class="card">
+                              <!-- <mat-form-field style="width: 100%" >
+                                  <mat-select placeholder="Choisir Client" [(value)]="selected3" (change)="activiteParClient($event)">
+                                    <mat-option [value]="0"></mat-option>
+                                    <mat-option *ngFor="let client of clients" [value]="client?.id">
+                                      {{client?.nomClient}}
+                                    </mat-option>
+                                    </mat-select>
+                                </mat-form-field> -->
+                            <div id="chartdiv3" [style.width.%]="100" [style.height.px]="350"></div>
+                          </div>
+                        </div>
+                        <div class="col-sm-4">
+                          <div class="card">
+                              <!-- <mat-form-field style="width: 100%">
+                                  <mat-select placeholder="choisir Chantier" [(value)]="selected2"  (change)="activiteParChantier($event)">
+                                      <mat-option [value]="0"></mat-option>
+                                      <mat-option *ngFor="let chantier of chantiers" [value]="chantier?.id">
+                                        {{chantier?.nomChantier}}
+                                      </mat-option>
+                                  </mat-select>
+                                  
+                                </mat-form-field> -->
+                            <div id="chartdiv4" [style.width.%]="90" [style.height.px]="350"></div>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-sm-4">
+                    <div class="table-responsive card">
+                      <div class="card-title"><h5><b>Liste des Chantiers</b></h5></div>
+                      <table class="table">
+                        <tr>
+                            <th>ID</th>
+                            <th>NOM</th>
+                            <th>VILLE</th>
+                        </tr>
+                        <tr *ngFor="let item of chantiers; let i = index;">
+                            <td>{{item.id }}</td>
+                            <td>{{ item.nomChantier }}</td>
+                            <td>{{ item.ville }} %</td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                  <div class="col-sm-8">
+                    <div class="table-responsive card">
+                      <div class="card-title"><h5><b>Liste des Clients</b></h5></div>
+                      <table class="table">
+                        <tr>
+                            <th>ID</th>
+                            <th>NOM</th>
+                            <th>Téléphone</th>
+                            <th>VILLE</th>
+                            <th>EMAIL</th>
+                        </tr>
+                        <tr *ngFor="let item of clients">
+                            <td>{{ item.id }}</td>
+                            <td>{{ item.nomClient }}</td>
+                            <td>{{ item.telephoneClient }}</td>
+                            <td>{{ item.villeClient }}</td>
+                            <td>{{ item.emailClient }}</td>
+                           
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+        <!-- Footer -->
+<footer class="footer text-center fixed-botom">
+    <div class="container-fluid">
+      <ul class="list-inline mb-5">
+        <li class="list-inline-item">
+          <a class="social-link rounded-circle text-white mr-3" href="#">
+            <i class="icon-social-facebook"></i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="social-link rounded-circle text-white mr-3" href="#">
+            <i class="icon-social-twitter"></i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="social-link rounded-circle text-white" href="#">
+            <i class="icon-social-github"></i>
+          </a>
+        </li>
+      </ul>
+      <p class="text-muted small mb-0">Copyright &copy; Your Website 2017</p>
+    </div>
+  </footer>
+  

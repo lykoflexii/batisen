@@ -1,0 +1,34 @@
+
+{
+    "gesBtpApp": {
+        "client" : {
+            "home": {
+                "title": "Clients",
+                "createLabel": "Créer un nouveau Client",
+                "createOrEditLabel": "Créer ou éditer un Client",
+                "search": "Recherche pour Client"
+            },
+            "created": "Un nouveau Client a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Client avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Client avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Client {{ id }} ?"
+            },
+            "detail": {
+                "title": "Client"
+            },
+            "nomClient": "Nom Client",
+            "villeClient": "Ville Client",
+            "adresseClient": "Adresse Client",
+            "telephoneClient": "Telephone Client",
+            "fax": "Fax",
+            "emailClient": "Email Client",
+            "typeClient": "Type Client",
+            "prenomClient": "Prenom Client",
+            "nomCommercial": "Nom Commercial",
+            "entreprise": "Entreprise",
+            "client": "Client",
+            "client1": "Client 1"
+        }
+    }
+}

@@ -1,0 +1,26 @@
+
+{
+    "gesBtpApp": {
+        "travaux" : {
+            "home": {
+                "title": "Travauxes",
+                "createLabel": "Create a new Travaux",
+                "createOrEditLabel": "Create or edit a Travaux",
+                "search": "Search for Travaux"
+            },
+            "created": "A new Travaux is created with identifier {{ param }}",
+            "updated": "A Travaux is updated with identifier {{ param }}",
+            "deleted": "A Travaux is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Travaux {{ id }}?"
+            },
+            "detail": {
+                "title": "Travaux"
+            },
+            "nomTrav": "Nom Trav",
+            "descriptionTrav": "Description Trav",
+            "affectation2": "Affectation 2",
+            "facture3": "Facture 3"
+        }
+    }
+}

@@ -1,0 +1,52 @@
+
+<div *ngIf="facture">
+    <h2><span jhiTranslate="gesBtpApp.facture.detail.title">Facture</span> {{facture.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="gesBtpApp.facture.dateCreation">Date Creation</span></dt>
+        <dd>
+            <span>{{facture.dateCreation | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span jhiTranslate="gesBtpApp.facture.remise">Remise</span></dt>
+        <dd>
+            <span>{{facture.remise}}</span>
+        </dd>
+        <dt><span jhiTranslate="gesBtpApp.facture.valider">Valider</span></dt>
+        <dd>
+            <span>{{facture.valider}}</span>
+        </dd>
+        <dt><span jhiTranslate="gesBtpApp.facture.chantier">Chantier</span></dt>
+        <dd>
+            <div *ngIf="facture.chantierId">
+                <a [routerLink]="['/chantier', facture.chantierId]">{{facture.chantierNomChantier}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="gesBtpApp.facture.travaux">Travaux</span></dt>
+        <dd>
+            <div *ngIf="facture.travauxId">
+                <a [routerLink]="['/travaux', facture.travauxId]">{{facture.travauxNomTrav}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="gesBtpApp.facture.entreprise">Entreprise</span></dt>
+        <dd>
+            <div *ngIf="facture.entrepriseId">
+                <a [routerLink]="['/entreprise', facture.entrepriseId]">{{facture.entrepriseName}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'facture/'+ facture.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

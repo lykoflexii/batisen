@@ -1,0 +1,79 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myEntrepriseLabel" jhiTranslate="gesBtpApp.entreprise.home.createOrEditLabel">Create or edit a Entreprise</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!entreprise.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="entreprise.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="gesBtpApp.entreprise.name" for="field_name">Name</label>
+            <input type="text" class="form-control" name="name" id="field_name"
+                [(ngModel)]="entreprise.name" required/>
+            <div [hidden]="!(editForm.controls.name?.dirty && editForm.controls.name?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.name?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="gesBtpApp.entreprise.commercialName" for="field_commercialName">Commercial Name</label>
+            <input type="text" class="form-control" name="commercialName" id="field_commercialName"
+                [(ngModel)]="entreprise.commercialName" required/>
+            <div [hidden]="!(editForm.controls.commercialName?.dirty && editForm.controls.commercialName?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.commercialName?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="gesBtpApp.entreprise.sirenNumber" for="field_sirenNumber">Siren Number</label>
+            <input type="text" class="form-control" name="sirenNumber" id="field_sirenNumber"
+                [(ngModel)]="entreprise.sirenNumber" required/>
+            <div [hidden]="!(editForm.controls.sirenNumber?.dirty && editForm.controls.sirenNumber?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.sirenNumber?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="gesBtpApp.entreprise.entrepriseAdminEmail" for="field_entrepriseAdminEmail">Entreprise Admin Email</label>
+            <input type="text" class="form-control" name="entrepriseAdminEmail" id="field_entrepriseAdminEmail"
+                [(ngModel)]="entreprise.entrepriseAdminEmail" required/>
+            <div [hidden]="!(editForm.controls.entrepriseAdminEmail?.dirty && editForm.controls.entrepriseAdminEmail?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.entrepriseAdminEmail?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="gesBtpApp.entreprise.telephone" for="field_telephone">Telephone</label>
+            <input type="number" class="form-control" name="telephone" id="field_telephone"
+                [(ngModel)]="entreprise.telephone" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="gesBtpApp.entreprise.pack" for="field_pack">Pack</label>
+            <input type="number" class="form-control" name="pack" id="field_pack"
+                [(ngModel)]="entreprise.pack" />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

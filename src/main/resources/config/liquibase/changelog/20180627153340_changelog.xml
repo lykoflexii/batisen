@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+   <changeSet author="Badjinka (generated)" id="1530113635515-1">
+      <addColumn tableName="devis">
+         <column name="cout_main_doeuvre" type="float8"/>
+      </addColumn>
+   </changeSet>
+   <changeSet author="Badjinka (generated)" id="1530113635515-2">
+      <addColumn tableName="client">
+         <column name="entreprise_id" type="int8"/>
+      </addColumn>
+   </changeSet>
+   <changeSet author="Badjinka (generated)" id="1530113635515-3">
+      <addColumn tableName="entreprise">
+         <column name="pack" type="int4"/>
+      </addColumn>
+   </changeSet>
+   <changeSet author="Badjinka (generated)" id="1530113635515-4">
+      <addColumn tableName="devis">
+         <column name="titre" type="varchar(255)"/>
+      </addColumn>
+   </changeSet>
+   <changeSet author="Badjinka (generated)" id="1530113635515-5">
+      <addColumn tableName="devis">
+         <column name="tva" type="float4"/>
+      </addColumn>
+   </changeSet>
+   <changeSet author="Badjinka (generated)" id="1530113635515-6">
+      <addColumn tableName="devis">
+         <column name="validite" type="bytea">
+            <constraints nullable="false"/>
+         </column>
+      </addColumn>
+   </changeSet>
+   <changeSet author="Badjinka (generated)" id="1530113635515-7">
+      <addUniqueConstraint columnNames="matricule"
+                           constraintName="UC_EMPLOYEMATRICULE_COL"
+                           tableName="employe"/>
+   </changeSet>
+   <changeSet author="Badjinka (generated)" id="1530113635515-8">
+      <addForeignKeyConstraint baseColumnNames="entreprise_id"
+                               baseTableName="jhi_user"
+                               constraintName="FKlxbvmmjsmccppbq5dl7r2bgls"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="entreprise"/>
+   </changeSet>
+   <changeSet author="Badjinka (generated)" id="1530113635515-9">
+      <addForeignKeyConstraint baseColumnNames="entreprise_id"
+                               baseTableName="client"
+                               constraintName="FKs1ssfo0wew5hbq5tlimqjb26m"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="entreprise"/>
+   </changeSet>
+   <changeSet author="Badjinka (generated)" id="1530113635515-10">
+      <dropUniqueConstraint constraintName="jhi_social_user_connection_user_id_provider_id_provider_use_key"
+                            tableName="jhi_social_user_connection"/>
+   </changeSet>
+   <changeSet author="Badjinka (generated)" id="1530113635515-11">
+      <dropUniqueConstraint constraintName="jhi_social_user_connection_user_id_provider_id_rank_key"
+                            tableName="jhi_social_user_connection"/>
+   </changeSet>
+</databaseChangeLog>

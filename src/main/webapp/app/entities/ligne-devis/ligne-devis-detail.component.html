@@ -1,0 +1,40 @@
+
+<div *ngIf="ligneDevis">
+    <h2><span jhiTranslate="gesBtpApp.ligneDevis.detail.title">Ligne Devis</span> {{ligneDevis.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="gesBtpApp.ligneDevis.designation">Designation</span></dt>
+        <dd>
+            <span>{{ligneDevis.designation}}</span>
+        </dd>
+        <dt><span jhiTranslate="gesBtpApp.ligneDevis.prixUnitaire">Prix Unitaire</span></dt>
+        <dd>
+            <span>{{ligneDevis.prixUnitaire}}</span>
+        </dd>
+        <dt><span jhiTranslate="gesBtpApp.ligneDevis.quantite">Quantite</span></dt>
+        <dd>
+            <span>{{ligneDevis.quantite}}</span>
+        </dd>
+        <dt><span jhiTranslate="gesBtpApp.ligneDevis.devis">Devis</span></dt>
+        <dd>
+            <div *ngIf="ligneDevis.devisId">
+                <a [routerLink]="['/devis', ligneDevis.devisId]">{{ligneDevis.devisId}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'ligne-devis/'+ ligneDevis.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

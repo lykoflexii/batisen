@@ -1,0 +1,28 @@
+
+{
+    "gesBtpApp": {
+        "affectation" : {
+            "home": {
+                "title": "Affectations",
+                "createLabel": "Créer un nouveau Affectation",
+                "createOrEditLabel": "Créer ou éditer un Affectation",
+                "search": "Recherche pour Affectation"
+            },
+            "created": "Un nouveau Affectation a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Affectation avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Affectation avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Affectation {{ id }} ?"
+            },
+            "detail": {
+                "title": "Affectation"
+            },
+            "dateDebut": "Date Debut",
+            "dateFin": "Date Fin",
+            "etat": "Etat",
+            "travaux": "Travaux",
+            "chantier": "Chantier",
+            "employe": "Employe"
+        }
+    }
+}
